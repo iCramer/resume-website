@@ -1,0 +1,30 @@
+<header id="nav" ng-class="{'show-nav': showNav && mobile}">
+	<div class="container">
+		<nav>
+			<ul>
+				<li><a ng-click="showNav = !showNav" ui-sref="admin.intro"><span>Intro</span>Intro</a></li>
+				<li><a ng-click="showNav = !showNav" ui-sref="admin.skills"><span>What I Do</span>What I Do</a></li>
+				<li><a ng-click="showNav = !showNav" ui-sref="admin.experience"><span>Experience</span>Experience</a></li>
+				<li class="logo"><div ng-include="'../images/SVGs/IanLogo.svg'"></div></li>
+				<li><a ng-click="showNav = !showNav" ui-sref="admin.testimonials"><span>Testimonials</span>Testimonials</a></li>
+				<li><a ng-click="showNav = !showNav" ui-sref="admin.about"><span>About Me</span>About Me</a></li>
+				<li><a ng-click="showNav = !showNav" ui-sref="admin.contact"><span>Contact</span>Contact</a></li>
+			</ul>
+		</nav>
+		<a href="" class="logout" ng-click="logout()">Logout</a>
+		<div id="nav-icon" ng-click="showNav = !showNav">
+			<hr>
+			<hr>
+			<hr>
+		</div>
+		
+	</div>
+</header>
+<div class="container view-content" ng-class="{'active': loaded}">
+
+	<div ui-view></div>
+
+</div>
+<div class="submit-feedback" ng-class="{'animate': submitted}">
+	<p>Content Published</p>
+</div>

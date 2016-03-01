@@ -1,0 +1,28 @@
+<section id="introEditor">
+	<h1 class="text-center">{{introContent.pageContent.firstName}} {{introContent.pageContent.lastName}}</h1>
+	<h2 class="text-center" ng-bind-html="introContent.pageContent.subtitle"></h2>
+	<form ng-submit="submitIntroData(introForm)" name="introForm" novalidate>
+		<input type="hidden" ng-model="introContent.pageContent.id" />
+		<div class="row">
+			<div class="col-sm-3 form-group">
+				<label>First Name</label>
+				<input ng-model="introContent.pageContent.firstName" type="text" class="form-control" name="title" required />
+			</div>
+			<div class="col-sm-3 form-group">
+				<label>Last Name</label>
+				<input ng-model="introContent.pageContent.lastName" type="text" class="form-control" name="title" required />
+			</div>
+			<div class="col-sm-6 form-group">
+				<label>Subtitle</label>
+				<textarea ng-model="introContent.pageContent.subtitle" name="subtitle" class="form-control" required></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>Arrow Text</label>
+				<input ng-model="introContent.pageContent.arrowText" type="text" class="form-control" name="arrowText" required />
+			</div>
+		</div>
+		<button type="submit" class="flat-button" value="Save">Publish</button>
+	</form>
+</section>

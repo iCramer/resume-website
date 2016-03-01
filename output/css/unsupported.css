@@ -1,0 +1,16 @@
+#loading .content .circle, #loading .content .circle2, #loading .content .circle3, #loading .content h1, section {
+	display: none;
+}
+#loading .content {
+	width: 100%;
+	left: auto;
+}
+#loading .content .unsupported-browser {
+	display: block;
+}
+#loading {
+	top: 0 !important;
+}
+body {
+	overflow: hidden;
+}

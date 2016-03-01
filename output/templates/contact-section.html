@@ -1,0 +1,46 @@
+<section id="contact" in-view="background-grow">
+	<header>
+		<div class="svg-drawing" in-view="draw" ng-include="svgPath(contactPageContent.headerIcon)"></div>
+		<h1 in-view="animate">{{contactPageContent.title}}</h1>
+		<p ng-bind-html="contactPageContent.intro" in-view="animate"></p>
+	</header>
+	<div class="container slide-up" in-view="animate">
+
+		<form ng-submit="send(contactForm.$valid)" name="contactForm" class="slider" novalidate>
+			<div class="row">
+				<div class="col-sm-offset-2 col-sm-4 col-md-offset-3 col-md-3 form-group">
+					<label>Name*</label>
+					<input ng-model="contact.name" type="text" class="form-control" name="messageName" required />
+					<div ng-show="contactForm.$submitted || contactForm.messageName.$touched">
+						<p class="validation" ng-show="contactForm.messageName.$error.required">Name is  required field</p>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-3 form-group">
+					<label>Email*</label>
+					<input ng-model="contact.email" name="messageEmail" type="email" class="form-control" required />
+					<div ng-show="contactForm.$submitted || contactForm.messageEmail.$touched">
+						<p class="validation" ng-show="contactForm.messageEmail.$error.required">Email is  required field</p>
+						<p class="validation" ng-show="contactForm.messageEmail.$dirty && contactForm.messageEmail.$error.email">
+        Not valid email!</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 form-group">
+					<label>Message*</label>
+					<textarea ng-model="contact.message" class="form-control" rows="7" name="messageBody" required ></textarea>
+					<div ng-show="contactForm.$submitted || contactForm.messageBody.$touched">
+						<p class="validation" ng-show="contactForm.messageBody.$error.required">Message is a required field</p>
+					</div>
+					<button type="submit" ng-class="{'activated': submitted}" class="flat-button feedback-button" value="Save">
+					<i class="glyphicon glyphicon-ok success"></i>
+					<i class="glyphicon glyphicon-send"></i></button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<p class="copyright">&copy;Copyright 2016 Ian Cramer</p>
+	<div class="submit-feedback" ng-class="{'animate': submitted}">
+		<p>Message Sent</p>
+</div>
+</section>

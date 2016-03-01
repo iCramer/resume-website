@@ -1,0 +1,67 @@
+<section id="testimonialsEditor">
+	<h1 class="text-center">{{testimonialsContent.pageContent.bodyCopy.title}}</h1>
+	<form ng-submit="submitTestimonialsData(testimonialsForm)" name="testimonialsForm" novalidate>
+		<input type="hidden" ng-model="testimonialsContent.pageContent.bodyCopy.id" />
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>Title</label>
+				<input ng-model="testimonialsContent.pageContent.bodyCopy.title" type="text" class="form-control" required />
+			</div>
+			<div class="col-sm-6 form-group">
+				<label>Header Icon</label>
+				<input ng-model="testimonialsContent.pageContent.bodyCopy.headerIcon" type="text" class="form-control" required />
+			</div>
+		</div>
+		<h3>Quotes</h3>
+		<div class="accordion">
+			<div ng-repeat="quote in testimonialsContent.pageContent.quotes">
+				<input type="hidden" ng-model="quote.id" />
+				<h4 ng-click="expand($event)">{{quote.author}}</h4>
+				<div class="row expander">
+					<div class="col-sm-4 form-group">
+						<label>Author</label>
+						<input ng-model="quote.author" type="text" class="form-control" required />
+					</div>
+					<div class="col-sm-4 form-group">
+						<div class="image-input">
+							<label>Image</label>
+							<input ng-model="quote.image" type="text" class="form-control" />
+							<img ng-if="pathCheck(quote.image)" ng-src="../images/testimonials/{{quote.image}}" />
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="checkbox pull-right">
+							<label>
+								<input type="checkbox" ng-model="quote.delete" />
+								Remove Quote
+							</label>
+						</div>
+					</div>
+					<div class="col-sm-12 form-group">
+						<label>Quote</label>
+						<textarea ng-model="quote.quote" class="form-control" required></textarea>
+					</div>
+				</div>
+			</div>
+			<h4 ng-click="expand($event)">Add New Quote</h4>
+			<div class="row expander">
+				<div class="col-sm-4 form-group">
+					<label>Author</label>
+					<input ng-model="newQuote.author" type="text" class="form-control" />
+				</div>
+				<div class="col-sm-4 form-group">
+						<div class="image-input">
+							<label>Image</label>
+							<input ng-model="newQuote.image" type="text" class="form-control" />
+							<img ng-if="pathCheck(newQuote.image)" ng-src="../images/testimonials/{{newQuote.image}}" />
+						</div>
+					</div>
+				<div class="col-sm-12 form-group">
+					<label>Quote</label>
+					<textarea ng-model="newQuote.quote" class="form-control"></textarea>
+				</div>
+			</div>
+		</div>
+		<button type="submit" class="flat-button" value="Save">Publish</button>
+	</form>
+</section>

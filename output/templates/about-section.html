@@ -1,0 +1,26 @@
+<section id="about" class="lightBackground">
+	<header class="blue-header" in-view="animate">
+		<div class="svg-drawing" in-view="draw">
+			<div ng-include="svgPath(aboutPageContent.header.headerIcon)"></div>
+		</div>
+		<h1 in-view="animate">{{aboutPageContent.header.title}}</h1>
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 slide-up" in-view="animate">
+				<div id="self-pic-drawing" in-view="draw">
+					<div ng-if="!mobile" ng-include="'images/SVGs/daVinci.svg'"></div>
+					<img id="self-pic" src="images/daVinci.png" alt="Vitruvian Man" />
+				</div>
+				<div class="text-block slider margin" ng-repeat="textBlock in aboutPageContent.paragraphs">
+					<h2>{{textBlock.title}}</h2>
+					<p>{{textBlock.body}}</p>
+				</div>
+				<div class="portfolioLinks bounce-in" in-view="animate">
+					<h4>{{aboutPageContent.header.portfolioHeader}}</h4>
+					<a ng-repeat="link in aboutPageContent.artLinks" ng-href="{{link.url}}" target="_blank"><img ng-src="images/{{link.image}}" alt="{{link.name}} Link" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

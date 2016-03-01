@@ -1,0 +1,21 @@
+<section id="testimonials" in-view="background-grow">
+	<header>
+		<div class="svg-drawing" in-view="draw" ng-include="svgPath(testimonialsPageContent.bodyCopy.headerIcon)"></div>
+		<h1 in-view="animate">{{testimonialsPageContent.bodyCopy.title}}</h1>
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="quotes clearfix" in-view="animate">
+				<div class="col-sm-6 quote" ng-repeat="quote in testimonialsPageContent.quotes" id="{{$index}}" ng-class="{'active': activeQuotes == $index || activeQuotes + 1 == $index}">
+					<div class="picture"><img ng-src="images/testimonials/{{quote.image}}" alt="{{quote.author}}" /></div>
+					<h4>{{quote.author}}</h4>
+					<p>{{quote.quote}}</p>
+				</div>
+			</div>
+		</div>
+		<ul class="carousel-nav">
+			<li ng-repeat="quote in testimonialsPageContent.quotes" ng-if="$index % 2 == 0 && testimonialsPageContent.quotes.length > 2" ng-click="rotateCarousel($index)" ng-class="{'active': activeQuotes == $index}"></li>
+		</ul>
+	</div>
+</section>
+

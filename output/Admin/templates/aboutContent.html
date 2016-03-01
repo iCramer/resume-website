@@ -1,0 +1,109 @@
+<section id="aboutEditor">
+	<h1 class="text-center">{{aboutContent.pageContent.header.title}}</h1>
+	<form ng-submit="submitAboutData(aboutForm)" name="aboutForm" novalidate>
+		<input type="hidden" ng-model="aboutContent.pageContent.header.id" />
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>Title</label>
+				<input ng-model="aboutContent.pageContent.header.title" type="text" class="form-control" required />
+			</div>
+			<div class="col-sm-6 form-group">
+				<label>Header Icon</label>
+				<input ng-model="aboutContent.pageContent.header.headerIcon" type="text" class="form-control" required />
+			</div>
+		</div>
+		<h3>Body Paragraphs</h3>
+		<div class="accordion">
+			<div ng-repeat="section in aboutContent.pageContent.paragraphs">
+				<input type="hidden" ng-model="section.id" />
+				<h4 ng-click="expand($event)">{{section.title}}</h4>
+				<div class="row expander">
+					<div class="col-sm-6 form-group">
+						<label>Title</label>
+						<input ng-model="section.title" type="text" class="form-control" required />
+					</div>
+					<div class="col-sm-6">
+						<div class="checkbox pull-right">
+							<label>
+								<input type="checkbox" ng-model="section.delete" />
+								Remove Paragraph
+							</label>
+						</div>
+					</div>
+					<div class="col-sm-12 form-group">
+						<label>Body</label>
+						<textarea ng-model="section.body" class="form-control" required></textarea>
+					</div>
+				</div>
+			</div>
+			<h4 ng-click="expand($event)">Add New Paragraph</h4>
+			<div class="row expander">
+				<div class="col-sm-6 form-group">
+					<label>Title</label>
+					<input ng-model="newParagraph.title" type="text" class="form-control" />
+				</div>
+				<div class="col-sm-12 form-group">
+					<label>Body</label>
+					<textarea ng-model="newParagraph.body" class="form-control"></textarea>
+				</div>
+			</div>
+		</div>
+		<h3>Portfolio Links</h3>
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>Header</label>
+				<input ng-model="aboutContent.pageContent.header.portfolioHeader" type="text" class="form-control" required />
+			</div>
+		</div>
+		<div class="accordion">
+			<div ng-repeat="item in aboutContent.pageContent.artLinks">
+				<input type="hidden" ng-model="item.id" />
+				<h4 ng-click="expand($event)">{{item.name}}</h4>
+				<div class="row expander">
+					<div class="col-sm-12">
+						<div class="checkbox pull-right">
+							<label>
+								<input type="checkbox" ng-model="item.delete" />
+								Remove Link
+							</label>
+						</div>
+					</div>
+					<div class="col-sm-4 form-group">
+						<label>Website Name</label>
+						<input ng-model="item.name" type="text" class="form-control" required />
+					</div>
+					<div class="col-sm-4 form-group">
+						<div class="image-input">
+							<label>Image</label>
+							<input ng-model="item.image" type="text" class="form-control" required />
+							<img ng-src="../images/{{item.image}}" />
+						</div>
+					</div>
+					<div class="col-sm-4 form-group">
+						<label>Url</label>
+						<input ng-model="item.url" type="text" class="form-control" required />
+					</div>
+				</div>
+			</div>
+			<h4 ng-click="expand($event)">Add New Link</h4>
+			<div class="row expander">
+				<div class="col-sm-4 form-group">
+					<label>Website Name</label>
+					<input ng-model="newLink.name" type="text" class="form-control" />
+				</div>
+				<div class="col-sm-4 form-group">
+					<div class="image-input">
+						<label>Image</label>
+						<input ng-model="newLink.image" type="text" class="form-control" />
+						<img ng-if="pathCheck(newLink.image)" ng-src="../images/{{newLink.image}}" />
+					</div>
+				</div>
+				<div class="col-sm-4 form-group">
+					<label>Link</label>
+					<input type="text" ng-model="newLink.url" class="form-control" />
+				</div>
+			</div>
+		</div>
+		<button type="submit" class="flat-button" value="Save">Pubish</button>
+	</form>
+</section>

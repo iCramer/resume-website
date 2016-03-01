@@ -1,0 +1,80 @@
+/* FONTS */
+
+@import url(https://fonts.googleapis.com/css?family=Londrina+Solid);
+// @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic);
+
+/*------------*/
+
+/* VARIABLES */
+@white: rgb(255, 255, 255);
+// @darkBlue: rgb(31,41,66);
+@darkBlue: rgb(3, 31, 45);
+@translucentBlue: rgba(6, 23, 58, 0.86);
+@translucentWhite: rgba(255, 255, 255, 0.75);
+
+@basicFont: 'Arimo', sans-serif;
+@headerFont: 'Londrina Solid', sans-serif;
+
+@crumpledPaper: url(../images/crumpledNewspaper.png) 0 0 repeat;
+
+@XLDesktop: 1500px;
+@largeDesktop: 1250px;
+@mediumDesktop: 996px;
+@tablet: 769px;
+@phone: 480px;
+/*------------*/
+
+/* MIXINS */
+.headerType() {
+	font-family: @headerFont;
+	letter-spacing: 1px;
+}
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+	-webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+	box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+.radius (@top-left: 3px, @top-right: 3px, @bottom-right: 3px, @bottom-left: 3px) {
+	border-radius: @top-left @top-right @bottom-right @bottom-left;
+	-webkit-border-radius: @top-left @top-right @bottom-right @bottom-left;
+	-moz-border-radius: @top-left @top-right @bottom-right @bottom-left;
+	-ms-border-radius: @top-left @top-right @bottom-right @bottom-left;
+}
+.opacity(@opacity){
+	opacity: @opacity;
+	-webkit-opacity: @opacity;
+	-moz-opacity: @opacity;
+}
+.transition (@type: all, @duration: .2s, @ease) {
+	-webkit-transition: @type @duration @ease;
+	-moz-transition: @type @duration @ease;
+	transition: @type @duration @ease;
+}
+
+.animate(@type, @duration, @ease){
+	-webkit-animation: @type @duration @ease;
+	-moz-animation: @type @duration @ease;
+	animation: @type @duration @ease;
+}
+.animate-delay(@duration){
+	-webkit-animation-delay: @duration;
+	-moz-animation-delay: @duration;
+	animation-delay: @duration;
+}
+.transition-delay(@duration){
+	-webkit-transition-delay: @duration;
+	-moz-transition-delay: @duration;
+	transition-delay: @duration;
+}
+.transition-duration(@duration){
+	-webkit-transition-duration: @duration;
+	-moz-transition-duration: @duration;
+	transition-duration: @duration;
+}
+
+.lightBackground() {
+	background: @crumpledPaper;
+	color: @darkBlue;
+	position: relative;
+}

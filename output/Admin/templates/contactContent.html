@@ -1,0 +1,23 @@
+<section id="contactEditor">
+	<h1 class="text-center">{{contactContent.pageContent.title}}</h1>
+	<form ng-submit="submitContactData(contactFormContent)" name="contactFormContent" novalidate>
+		<input type="hidden" ng-model="contactContent.pageContent.header.id" />
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>Title</label>
+				<input ng-model="contactContent.pageContent.title" type="text" class="form-control" name="title" required />
+			</div>
+			<div class="col-sm-6 form-group">
+				<label>Header Icon</label>
+				<input ng-model="contactContent.pageContent.headerIcon" type="text" class="form-control" required />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>Intro</label>
+				<textarea ng-model="contactContent.pageContent.intro" class="form-control" name="intro" required />
+			</div>
+		</div>
+		<button type="submit" class="flat-button" value="Save">Publish</button>
+	</form>
+</section>

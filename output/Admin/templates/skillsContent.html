@@ -1,0 +1,72 @@
+<section id="skillsEditor">
+	<h1 class="text-center">{{skillsContent.pageContent.bodyCopy.title}}</h1>
+	<form ng-submit="submitSkillsData(skillsForm)" name="skillsForm" novalidate>
+		<input type="hidden" ng-model="skillsContent.bodyCopy.pageContent.id" />
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>Title</label>
+				<input ng-model="skillsContent.pageContent.bodyCopy.title" type="text" class="form-control" required />
+			</div>
+			<div class="col-sm-6 form-group">
+				<label>Header Icon</label>
+				<input ng-model="skillsContent.pageContent.bodyCopy.headerIcon" type="text" class="form-control" required />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>Tools Header</label>
+				<input ng-model="skillsContent.pageContent.bodyCopy.toolsHeader" type="text" class="form-control" required />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<h4>{{skillsContent.pageContent.bodyCopy.skillTitle1}}</h4>
+				<label>SVG Icon</label>
+				<input ng-model="skillsContent.pageContent.bodyCopy.skillIcon1" type="text" class="form-control" required />
+				<label>Title</label>
+				<input ng-model="skillsContent.pageContent.bodyCopy.skillTitle1" type="text" class="form-control" required />
+				<label>Content</label>
+				<textarea ng-model="skillsContent.pageContent.bodyCopy.skillContent1" class="form-control" required></textarea>
+			</div>
+			<div class="col-sm-6 form-group">
+				<h4>{{skillsContent.pageContent.bodyCopy.skillTitle2}}</h4>
+				<label>SVG Icon</label>
+				<input ng-model="skillsContent.pageContent.bodyCopy.skillIcon2" type="text" class="form-control" required />
+				<label>Title</label>
+				<input ng-model="skillsContent.pageContent.bodyCopy.skillTitle2" type="text" class="form-control" required />
+				<label>Content</label>
+				<textarea ng-model="skillsContent.pageContent.bodyCopy.skillContent2" class="form-control" required></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>{{skillsContent.pageContent.bodyCopy.toolsHeader}}</h3>
+				<div class="images">
+					<div class="check-box" ng-repeat="item in skillsContent.pageContent.tools">
+						<input type="hidden" ng-model="item.id" />
+						<img ng-src="../images/{{item.image}}" />
+						<i class="glyphicon glyphicon-remove"></i><input type="checkbox" ng-model="item.delete" />
+					</div>
+				</div>
+				<div class="new-tool">
+					<label>Add New Image</label>
+					<div class="form-group image-input">
+						<label>Image</label>
+						<input class="form-control" type="text" ng-model="newTool.image" />
+						<img ng-if="pathCheck(newTool.image)" ng-src="../images/{{newTool.image}}" />
+					</div>
+					<div class="form-group">
+						<label>Category</label>
+						<select class="form-control" ng-model="newTool.category">
+							<option>dev</option>
+							<option>design</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button type="submit" class="flat-button" value="Save">Publish</button>
+</div>
+</form>
+</section>

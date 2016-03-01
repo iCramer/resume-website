@@ -1,0 +1,134 @@
+<section id="experienceEditor">
+	<h1 class="text-center">{{experienceContent.pageContent.bodyCopy.title}}</h1>
+	<form ng-submit="submitExperienceData(experienceForm)" name="experienceForm" novalidate>
+		<input type="hidden" ng-model="experienceContent.pageContent.bodyCopy.header.id" />
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>Title</label>
+				<input ng-model="experienceContent.pageContent.bodyCopy.title" type="text" class="form-control" required />
+			</div>
+			<div class="col-sm-6 form-group">
+				<label>Header Icon</label>
+				<input ng-model="experienceContent.pageContent.bodyCopy.headerIcon" type="text" class="form-control" required />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 form-group">
+				<label>Intro Copy</label>
+				<textarea ng-model="experienceContent.pageContent.bodyCopy.introCopy" class="form-control" required></textarea>
+			</div>
+			<div class="col-sm-6 form-group">
+				<label>Grid Header</label>
+				<input ng-model="experienceContent.pageContent.bodyCopy.gridHeader" type="text" class="form-control" required />
+			</div>
+		</div>
+		<h3>Projects</h3>
+		<div class="accordion">
+			<div ng-repeat="project in experienceContent.pageContent.projects">
+				<input type="hidden" ng-model="project.id" />
+				<h4 ng-click="expand($event)">{{project.company}}</h4>
+				<div class="expander">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="checkbox pull-right">
+								<label>
+									<input type="checkbox" ng-model="project.delete" />
+									Remove Project
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 form-group">
+							<label>Company</label>
+							<input type="text" ng-model="project.company" class="form-control" required>
+						</div>
+						<div class="col-sm-6 form-group">
+							<label>Position</label>
+							<input ng-model="project.position" type="text" class="form-control" required />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 form-group">
+							<div class="image-input">
+								<label>Logo</label>
+								<input type="text" ng-model="project.logo" class="form-control" required>
+								<img ng-src="../images/logos/{{project.logo}}" />
+							</div>
+						</div>
+						<div class="col-sm-6 form-group">
+							<div class="image-input">
+								<label>Background Image</label>
+								<input ng-model="project.backgroundImg" type="text" class="form-control" required />
+								<img ng-src="../images/{{project.backgroundImg}}" />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 form-group">
+							<label>Summary</label>
+							<input type="text" ng-model="project.projectSummary" class="form-control" required />
+						</div>
+						<div class="col-sm-6 form-group">
+							<label>Tools</label>
+							<input type="text" ng-model="project.projectTools" class="form-control" required />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12 form-group">
+							<label>Description</label>
+							<textarea ng-model="project.description" class="form-control" required /></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h4 ng-click="expand($event)">Add New Project</h4>
+			<div class="expander">
+				<div class="row">
+					<div class="col-sm-6 form-group">
+						<label>Company</label>
+						<input type="text" ng-model="newProject.company" class="form-control" />
+					</div>
+					<div class="col-sm-6 form-group">
+						<label>Position</label>
+						<input ng-model="newProject.position" type="text" class="form-control" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 form-group">
+						<div class="image-input">
+							<label>Logo</label>
+							<input type="text" ng-model="newProject.logo" class="form-control" />
+							<img ng-if="pathCheck(newProject.logo)" ng-src="../images/logos/{{newProject.logo}}" />
+						</div>
+					</div>
+					<div class="col-sm-6 form-group">
+						<div class="image-input">
+							<label>Background Image</label>
+							<input ng-model="newProject.backgroundImg" type="text" class="form-control" />
+							<img ng-if="pathCheck(newProject.backgroundImg)" ng-src="../images/{{newProject.backgroundImg}}" />
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 form-group">
+						<label>Summary</label>
+						<input type="text" ng-model="newProject.projectSummary" class="form-control" />
+					</div>
+					<div class="col-sm-6 form-group">
+						<label>Tools</label>
+						<input type="text" ng-model="newProject.projectTools" class="form-control" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 form-group">
+						<label>Description</label>
+						<textarea ng-model="newProject.description" class="form-control" /></textarea>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button type="submit" class="flat-button" value="Save">Publish</button>
+</form>
+</section>
