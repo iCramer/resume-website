@@ -2578,8 +2578,22 @@ section#about .portfolioLinks {
   background: rgba(28, 36, 57, 0.08);
 }
 section#about .portfolioLinks a {
-  margin: 15px;
+  margin: 15px 35px;
   display: inline-block;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+@media (max-width: 480px) {
+  section#about .portfolioLinks a {
+    margin: 15px 5px;
+  }
+}
+section#about .portfolioLinks a:hover {
+  transform: translateY(-10px);
+}
+section#about .portfolioLinks img {
+  max-height: 100px;
 }
 section#about .portfolioLinks h4 {
   font-size: 33px;

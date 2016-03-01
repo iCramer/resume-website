@@ -1622,8 +1622,18 @@ section#about {
 		margin-top: 15px;
 		background: rgba(28, 36, 57, 0.08);
 		a {
-			margin: 15px;
+			margin: 15px 35px;
 			display: inline-block;
+			.transition(all, .5s, ease);
+			@media (max-width: @phone) {
+				margin: 15px 5px;
+			}
+			&:hover {
+				transform: translateY(-10px);
+			}
+		}
+		img {
+			max-height: 100px;
 		}
 		h4 {
 			font-size: 33px;
