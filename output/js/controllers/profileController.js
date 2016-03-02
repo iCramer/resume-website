@@ -46,7 +46,7 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageCo
 
 	//Determine screen size of device
 	$scope.checkScreenSize = function(){
-		if(window.innerWidth < 769) {
+		if(window.innerWidth < 770) {
 			$scope.mobile = true;
 			$scope.animationOver = true;
 		} 
