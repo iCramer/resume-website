@@ -608,11 +608,11 @@ h2,
 h3,
 .h3 {
   font-size: 40px;
+  letter-spacing: 0;
 }
 @media (max-width: 996px) {
   h3,
   .h3 {
-    letter-spacing: 0;
     font-size: 30px;
   }
 }
@@ -1174,11 +1174,10 @@ header#nav #nav-icon.open hr:nth-child(2) {
   background: #ffffff;
   border: 2px solid #031f2d;
   border-radius: 3px;
-  padding: .5em 3em;
-  font-size: 17px;
+  padding: .3em 3em;
+  font-size: 21px;
   margin-top: 15px;
   z-index: 1;
-  letter-spacing: 0;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;
@@ -1663,6 +1662,7 @@ section#intro .scroll-message {
 section#intro .scroll-message h3 {
   color: #ffffff;
   font-size: 35px;
+  letter-spacing: 1px;
 }
 section#intro .scroll-message svg {
   height: 40px;
@@ -1994,23 +1994,23 @@ section#experience .project img {
 }
 section#experience .project .details-link {
   position: absolute;
-  bottom: 12px;
+  bottom: 0;
   text-align: center;
   width: 100%;
   font-size: 20px;
   line-height: 22px;
+  background: rgba(255, 255, 255, 0.75);
+  padding: .2em 0;
   cursor: pointer;
 }
 @media (max-width: 769px) {
   section#experience .project .details-link {
-    bottom: 10px;
     font-size: 19px;
   }
 }
 @media (max-width: 480px) {
   section#experience .project .details-link {
     font-size: 15px;
-    bottom: 6px;
   }
 }
 section#experience .project .details-link i {
@@ -2285,10 +2285,14 @@ section#experience .grid-wrapper.view-full .placeholder .back {
   margin-bottom: 100px;
 }
 #project-details tr {
-  border-bottom: 5px solid rgba(255, 255, 255, 0.75);
+  border-bottom: 3px solid #ffffff;
 }
 #project-details td {
   padding: 20px;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -ms-border-radius: 4px 4px 4px 4px;
 }
 @media (max-width: 480px) {
   #project-details td {
@@ -2299,8 +2303,9 @@ section#experience .grid-wrapper.view-full .placeholder .back {
   background: rgba(255, 255, 255, 0.75);
 }
 #project-details .title {
-  background: rgba(248, 248, 248, 0.75);
+  background: #031f2d;
   vertical-align: top;
+  color: #ffffff;
 }
 #project-details img.company-logo {
   margin: -45px 0;
@@ -2317,13 +2322,6 @@ section#experience .grid-wrapper.view-full .placeholder .back {
   position: absolute;
   top: 48px;
   right: 54px;
-  font-size: 5em;
-  line-height: 0;
-  transform: scale(1, 0.6);
-  -moz-transform: scale(1, 0.6);
-  -webkit-transform: scale(1, 0.6);
-  height: 41px;
-  width: 41px;
 }
 @media (max-width: 1250px) {
   #project-details .closeBox {
@@ -2335,8 +2333,16 @@ section#experience .grid-wrapper.view-full .placeholder .back {
   #project-details .closeBox {
     top: 19px;
     right: 8px;
-    font-size: 61px;
   }
+}
+#project-details .closeBox span.glyphicon {
+  font-size: 41px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+#project-details .closeBox:hover span.glyphicon {
+  color: #00709e;
 }
 @media (max-device-width: 1250px) {
   #project-details {
@@ -2406,7 +2412,6 @@ section#testimonials .quotes {
 }
 section#testimonials .quotes .quote {
   padding: 2em 3em;
-  position: absolute;
   opacity: 0;
   -webkit-opacity: 0;
   -moz-opacity: 0;
@@ -2416,6 +2421,11 @@ section#testimonials .quotes .quote {
   transform: scale(0.7);
   -moz-transform: scale(0.7);
   -webkit-transform: scale(0.7);
+  position: absolute;
+}
+section#testimonials .quotes .quote:nth-child(1),
+section#testimonials .quotes .quote:nth-child(2) {
+  position: relative;
 }
 @media (min-width: 769px) {
   section#testimonials .quotes .quote {
@@ -2438,10 +2448,6 @@ section#testimonials .quotes .quote:nth-child(odd) {
 section#testimonials .quotes .quote:nth-child(even) {
   right: -490px;
   float: right;
-}
-section#testimonials .quotes .quote:nth-child(1),
-section#testimonials .quotes .quote:nth-child(2) {
-  position: relative;
 }
 section#testimonials .quotes .quote .picture {
   width: 100px;
@@ -2483,6 +2489,10 @@ section#testimonials .quotes .quote h4 {
   font-family: 'Londrina Solid', 'Impact', sans-serif;
   letter-spacing: 1px;
   margin-bottom: 25px;
+}
+section#testimonials .quotes.animate .quote:nth-child(1),
+section#testimonials .quotes.animate .quote:nth-child(2) {
+  position: absolute;
 }
 section#testimonials .quotes.animate .quote.active {
   transform: scale(1);

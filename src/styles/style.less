@@ -38,8 +38,8 @@ h2, .h2 {
 }
 h3, .h3 {
 	font-size: 40px;
+	letter-spacing: 0;
 	@media (max-width: @mediumDesktop) {
-		letter-spacing: 0;
 		font-size: 30px;
 	}
 	@media (max-width: @phone) {
@@ -508,11 +508,10 @@ header {
 	background: @white;
 	border: 2px solid @darkBlue;
 	border-radius: 3px;
-	padding: .5em 3em;
-	font-size: 17px;
+	padding: .3em 3em;
+	font-size: 21px;
 	margin-top: 15px;
 	z-index: 1;
-	letter-spacing: 0;
 	.transition(all, .4s, ease);
 	.radius();
 	&:hover {
@@ -872,6 +871,7 @@ section#intro {
 		h3 {
 			color: @white;
 			font-size: 35px;
+			letter-spacing: 1px;
 		}
 		svg {
 			height: 40px;
@@ -1121,19 +1121,19 @@ section#experience {
 		}
 		.details-link {
 			position: absolute;
-			bottom: 12px;
+			bottom: 0;
 			text-align: center;
 			width: 100%;
 			font-size: 20px;
 			line-height: 22px;
+			background: @translucentWhite;
+			padding: .2em 0;
 			cursor: pointer;
 			@media (max-width: @tablet) {
-				bottom: 10px;
 				font-size: 19px;
 			}
 			@media (max-width: @phone) {
 				font-size: 15px;
-				bottom: 6px;
 			}
 			i {
 				font-size: 24px;
@@ -1379,10 +1379,11 @@ section#experience {
 		margin-bottom: 100px;
 	}
 	tr {
-		border-bottom: 5px solid @translucentWhite;
+		border-bottom: 3px solid @white;
 	}
 	td {
 		padding: 20px;
+		.radius(4px, 4px, 4px, 4px);
 		@media (max-width: @phone) {
 			display: block;
 		}
@@ -1391,8 +1392,9 @@ section#experience {
 		background: @translucentWhite;
 	}
 	.title {
-		background: rgba(248, 248, 248, 0.75);
+		background: @darkBlue;
 		vertical-align: top;
+		color: @white;
 	}
 	img.company-logo {
 		margin: -45px 0;
@@ -1407,13 +1409,6 @@ section#experience {
 		position: absolute;
 		top: 48px;
 		right: 54px;
-		font-size: 5em;
-		line-height: 0;
-		transform: scale(1, .6);
-		-moz-transform: scale(1, .6);
-		-webkit-transform: scale(1, .6);
-		height: 41px;
-		width: 41px;
 		@media (max-width: @largeDesktop) {
 			top: 55px;
 			right: 60px;
@@ -1421,7 +1416,15 @@ section#experience {
 		@media (max-width: @tablet) {
 			top: 19px;
     		right: 8px;
-			font-size: 61px;
+		}
+		span.glyphicon {
+			font-size: 41px;
+			.transition(all, .4s, ease);
+		}
+		&:hover {
+			span.glyphicon {
+				color: rgb(0, 112, 158);
+			}
 		}
 	}
 	@media (max-device-width: @largeDesktop) {
@@ -1481,12 +1484,15 @@ section#testimonials {
 		overflow-y: auto;
 		.quote {
 			padding: 2em 3em;
-			position: absolute;
 			.opacity(0);
 			.transition(all, .7s, ease);
 			transform: scale(.7);
 			-moz-transform: scale(.7);
 			-webkit-transform: scale(.7);
+			position: absolute;
+			&:nth-child(1), &:nth-child(2) {
+				position: relative;
+			}
 			@media (min-width: 769px) {
 				max-width: 370px;
 			}
@@ -1502,9 +1508,6 @@ section#testimonials {
 			&:nth-child(even) {
 				right: -490px;
 				float: right;
-			}
-			&:nth-child(1), &:nth-child(2) {
-				position: relative;
 			}
 			.picture {
 				width: 100px;
@@ -1543,7 +1546,10 @@ section#testimonials {
 			}
 		}
 		&.animate {
-			.quote {					
+			.quote {
+				&:nth-child(1), &:nth-child(2) {
+					position: absolute;
+				}			
 				&.active {
 					transform: scale(1);
 					-moz-transform: scale(1);
