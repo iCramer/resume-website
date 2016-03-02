@@ -695,6 +695,9 @@ label {
 .hidden {
   visibility: hidden;
 }
+.no-display {
+  display: none;
+}
 .no-scroll {
   overflow: hidden;
 }
@@ -908,8 +911,9 @@ header#nav {
 @media (max-width: 769px) {
   header#nav {
     margin-bottom: 0;
-    height: 38px;
+    height: 22px;
     background: #031f2d;
+    top: 0 !important;
   }
 }
 header#nav nav {
@@ -1039,7 +1043,7 @@ header#nav nav ul li.logo svg {
   }
 }
 header#nav.show-nav {
-  height: 105%;
+  height: 100%;
   background: none;
   overflow-y: scroll;
   /* has to be scroll, not auto */
@@ -1103,9 +1107,9 @@ header#nav #nav-icon {
   -ms-border-radius: 50% 50% 50% 50%;
   background: #031f2d;
   padding: 84px 79px 9px 22px;
-  position: absolute;
+  position: fixed;
   right: -69px;
-  top: -48px;
+  top: -69px;
 }
 header#nav #nav-icon hr {
   -webkit-transition: all 0.3s ease;
@@ -2349,6 +2353,7 @@ section#experience .grid-wrapper.view-full .placeholder .back {
     overflow-y: scroll;
     /* has to be scroll, not auto */
     -webkit-overflow-scrolling: touch;
+    left: -100%;
   }
 }
 section#testimonials {

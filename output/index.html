@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <header id="nav" ng-class="{'show-nav': showNav && mobile, 'condensed': navScrolled && !mobile}">
+    <header id="nav" ng-class="{'show-nav': showNav && mobile, 'no-display': !navVisible && mobile, 'condensed': navScrolled && !mobile}">
       <div class="container">
         <nav>
           <ul>
