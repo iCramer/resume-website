@@ -3,6 +3,7 @@ var app = angular.module('profileServices', []);
 app.factory('pageContent', function($http, $q){
 	var content = {};
 	
+	//Service call to retrieve page content from CMS
 	content.getContent = function(page) {
 		var deferred = $q.defer();
 		$http({
@@ -19,6 +20,7 @@ app.factory('pageContent', function($http, $q){
 		return deferred.promise;
 	}
 
+	//Service call to set page content in CMS
 	content.setContent = function(pageData){
 		var deferred = $q.defer();
 		$http({

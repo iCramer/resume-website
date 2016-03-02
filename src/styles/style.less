@@ -32,12 +32,14 @@ h2, .h2 {
 		font-size: 34px;
 	}
 	@media (max-width: @phone) {
+		letter-spacing: 0;
 		font-size: 26px;
 	}
 }
 h3, .h3 {
 	font-size: 40px;
 	@media (max-width: @mediumDesktop) {
+		letter-spacing: 0;
 		font-size: 30px;
 	}
 	@media (max-width: @phone) {
@@ -46,6 +48,7 @@ h3, .h3 {
 }
 h4, .h4 {
 	font-size: 25px;
+	letter-spacing: 0;
 	@media (max-width: @mediumDesktop) {
 		font-size: 23px;
 	}
@@ -506,9 +509,10 @@ header {
 	border: 2px solid @darkBlue;
 	border-radius: 3px;
 	padding: .5em 3em;
-	font-size: 16px;
+	font-size: 17px;
 	margin-top: 15px;
 	z-index: 1;
+	letter-spacing: 0;
 	.transition(all, .4s, ease);
 	.radius();
 	&:hover {
@@ -1391,7 +1395,7 @@ section#experience {
 		vertical-align: top;
 	}
 	img.company-logo {
-		max-width: 300px;
+		margin: -45px 0;
 	}
 	span.glyphicon {
 		font-size: 50px;
@@ -1415,8 +1419,8 @@ section#experience {
 			right: 60px;
 		}
 		@media (max-width: @tablet) {
-			top: 32px;
-			right: 32px;
+			top: 19px;
+    		right: 8px;
 			font-size: 61px;
 		}
 	}
@@ -1499,7 +1503,9 @@ section#testimonials {
 				right: -490px;
 				float: right;
 			}
-
+			&:nth-child(1), &:nth-child(2) {
+				position: relative;
+			}
 			.picture {
 				width: 100px;
 				height: 100px;
@@ -1626,10 +1632,12 @@ section#about {
 			display: inline-block;
 			.transition(all, .5s, ease);
 			@media (max-width: @phone) {
-				margin: 15px 5px;
+				margin: 15px;
 			}
 			&:hover {
 				transform: translateY(-10px);
+				-moz-transform: translateY(-10px);
+				-webkit-transform: translateY(-10px);
 			}
 		}
 		img {

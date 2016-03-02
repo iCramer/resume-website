@@ -3,20 +3,23 @@
 var app = angular.module('profileApp', ['profileApp.directives', 'profileServices', 'ngSanitize']);
 
 app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageContent', '$sanitize', function($rootScope, $scope, $timeout, pageContent, $sanitize) {
+	//Set IE variable to use in places to where javascript is used to replace CSS animations
 	var isIE = /*@cc_on!@*/false || !!document.documentMode;
 	if (isIE) { $('html').addClass('IE') };
 
+	//Scroll to top of screen on page refresh
 	$(window).on('beforeunload', function() {
 		$(window).scrollTop(0);
 	});
 
+	//Set SVG paths in ng-include statements
 	$rootScope.svgPath = function(file) {
 		if (file != '' && file != undefined) {
 			return 'images/SVGs/' + file;
 		}
 	};
 
-	//Get page content from DB
+	//Initialize page titles object to be populated from CMS
 	$rootScope.navItems = {
 		'page1': 'Home',
 		'page2': '',
@@ -26,7 +29,8 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageCo
 		'page6': '',
 	};
 	$scope.introPageContent = {};
-
+	
+	//Get page content from CMS
 	pageContent.getContent('introSection').then(function(response){
 		$scope.introPageContent = response.data[0];
 	});
@@ -40,6 +44,7 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageCo
 	$scope.mobile = false;
 	$scope.tablet = false;
 
+	//Determine screen size of device
 	$scope.checkScreenSize = function(){
 		if(window.innerWidth < 769) {
 			$scope.mobile = true;
@@ -57,6 +62,7 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageCo
 	};
 	$scope.checkScreenSize();
 
+	//Function to hide/show nav
 	$rootScope.setNav = function() {
 		if ($rootScope.navVisible) {
 			$('#nav').animate({'top': -5}, 300);
@@ -67,24 +73,19 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageCo
 			$('#nav').animate({'top': -150}, 300);
 		}
 	}
+
+	//Watch $scope.navVisible to call setNav function on variable change
 	$rootScope.$watch('navVisible', function() {
 		$rootScope.setNav();
 	});
-	$scope.$watch('mobile', function(oldValue, newValue) {
-		if (oldValue == newValue) {
-			return;
-		}
-		else {
-			$rootScope.setNav();
-		}
-	});
 
+	//Check screen size on window resize
 	$(window).resize(function(){
 		$scope.checkScreenSize();
 		$scope.$apply();
 	});
 
-
+	//Site navigation
 	$scope.jumpTo = function(section){
 		$scope.showNav = false;
 		$scope.scrollTo = $('.page:eq(' + section + ')').offset().top;
@@ -96,6 +97,7 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageCo
 		}
 	};
 
+	//Switch to and from condensed navigation view on scroll
 	$(window).scroll(function(){
 		if($(window).scrollTop() > 600){
 			$scope.navScrolled = true;
@@ -106,6 +108,7 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageCo
 		$scope.$apply();
 	});
 
+	//Run title, navigation, and main image animations when opening drawing animation ends
 	$('body').bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', '#cityOutline svg', function(e) {
 		$scope.animationOver = true;
 		$timeout(function(){
@@ -117,6 +120,7 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageCo
 		$('#cityOutline').addClass('disappear');
 	});
 
+	//Hide loading screen after it slides up
 	$('body').bind('webkitTransitionEnd otransitionend msTransitionEnd transitionend', '.circle', function(e) {
 		$scope.loadingAnimationOver = true;
 		$scope.$apply();
@@ -125,6 +129,7 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageCo
 	$(window).load(function(){
 		$('body').addClass('loaded');
 
+		//Run home page drawing animation on larger screens
 		if (!$scope.mobile) {
 			$('#cityOutline').addClass('draw');
 		}
@@ -132,6 +137,8 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageCo
 			$rootScope.navVisible = true;
 		}
 
+
+		//Javascript function to run "stroke-dasharray" animation in IE. IE does not support "stroke-dasharray" css animation
 		if (isIE) {
 			$scope.closeBanner = function() {
 				$('.browser-warning').animate({top: -200}, 800);

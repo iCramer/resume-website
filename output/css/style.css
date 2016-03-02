@@ -554,7 +554,7 @@ h4,
 h5,
 .h5,
 label {
-  font-family: 'Londrina Solid', sans-serif;
+  font-family: 'Londrina Solid', 'Impact', sans-serif;
   letter-spacing: 1px;
 }
 h1,
@@ -606,6 +606,7 @@ h2,
 @media (max-width: 480px) {
   h2,
   .h2 {
+    letter-spacing: 0;
     font-size: 26px;
   }
 }
@@ -616,6 +617,7 @@ h3,
 @media (max-width: 996px) {
   h3,
   .h3 {
+    letter-spacing: 0;
     font-size: 30px;
   }
 }
@@ -628,6 +630,7 @@ h3,
 h4,
 .h4 {
   font-size: 25px;
+  letter-spacing: 0;
 }
 @media (max-width: 996px) {
   h4,
@@ -805,7 +808,7 @@ a:hover {
   color: inherit;
 }
 button {
-  font-family: 'Londrina Solid', sans-serif;
+  font-family: 'Londrina Solid', 'Impact', sans-serif;
   letter-spacing: 1px;
   appearance: none;
   -webkit-appearance: none;
@@ -927,7 +930,7 @@ header#nav nav ul li {
   vertical-align: top;
 }
 header#nav nav ul li a {
-  font-family: 'Londrina Solid', sans-serif;
+  font-family: 'Londrina Solid', 'Impact', sans-serif;
   letter-spacing: 1px;
   color: #ffffff;
   font-size: 2em;
@@ -1177,9 +1180,10 @@ header#nav #nav-icon.open hr:nth-child(2) {
   border: 2px solid #031f2d;
   border-radius: 3px;
   padding: .5em 3em;
-  font-size: 16px;
+  font-size: 17px;
   margin-top: 15px;
   z-index: 1;
+  letter-spacing: 0;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;
@@ -2304,7 +2308,7 @@ section#experience .grid-wrapper.view-full .placeholder .back {
   vertical-align: top;
 }
 #project-details img.company-logo {
-  max-width: 300px;
+  margin: -45px 0;
 }
 #project-details span.glyphicon {
   font-size: 50px;
@@ -2334,8 +2338,8 @@ section#experience .grid-wrapper.view-full .placeholder .back {
 }
 @media (max-width: 769px) {
   #project-details .closeBox {
-    top: 32px;
-    right: 32px;
+    top: 19px;
+    right: 8px;
     font-size: 61px;
   }
 }
@@ -2440,6 +2444,10 @@ section#testimonials .quotes .quote:nth-child(even) {
   right: -490px;
   float: right;
 }
+section#testimonials .quotes .quote:nth-child(1),
+section#testimonials .quotes .quote:nth-child(2) {
+  position: relative;
+}
 section#testimonials .quotes .quote .picture {
   width: 100px;
   height: 100px;
@@ -2477,7 +2485,7 @@ section#testimonials .quotes .quote p::after {
 }
 section#testimonials .quotes .quote h4 {
   text-align: center;
-  font-family: 'Londrina Solid', sans-serif;
+  font-family: 'Londrina Solid', 'Impact', sans-serif;
   letter-spacing: 1px;
   margin-bottom: 25px;
 }
@@ -2591,11 +2599,13 @@ section#about .portfolioLinks a {
 }
 @media (max-width: 480px) {
   section#about .portfolioLinks a {
-    margin: 15px 5px;
+    margin: 15px;
   }
 }
 section#about .portfolioLinks a:hover {
   transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
 }
 section#about .portfolioLinks img {
   max-height: 100px;

@@ -3,6 +3,7 @@ var app = angular.module('loginApp', []);
 app.factory('loginService', function($http, $q){
 	var content = {};
 	
+	//Log in to Amin application
 	content.login = function(user) {
 		var deferred = $q.defer();
 		$http({
@@ -21,6 +22,7 @@ app.factory('loginService', function($http, $q){
 		return deferred.promise;
 	}
 
+	//Log out of Amin application
 	content.logout = function(user) {
 		var deferred = $q.defer();
 		$http({

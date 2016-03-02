@@ -3,14 +3,17 @@
 var app = angular.module('CMSApp', ['profileServices', 'ui.router', 'loginApp', 'ngCookies', 'ngSanitize']);
 
 app.controller('CMSController', ['$cookies', '$state', '$rootScope', '$scope', '$timeout', 'loginService', function($cookies, $state, $rootScope, $scope, $timeout, loginService){
+
+	//Retrieve user credentials cookie if still signed in
 	$rootScope.user = $cookies.getObject('user') || {'userName': '', 'password': ''};
+
 	$scope.loaded = false;
 	$scope.showNav = false;
 	$scope.mobile = false;
 	$scope.tablet = false;
 	$rootScope.submitted = false;
 
-
+	//Determine screen size
 	$scope.checkScreenSize = function(){
 		if(window.innerWidth < 769) {
 			$scope.mobile = true;
@@ -27,20 +30,25 @@ app.controller('CMSController', ['$cookies', '$state', '$rootScope', '$scope', '
 	};
 	$scope.checkScreenSize();
 
+	//Check new screen size on screen resize
 	$(window).resize(function(){
 		$scope.checkScreenSize();
 		$scope.$apply();
 	});
 
+	//Expand accordion
 	$scope.expand = function(event) {
 		$(event.currentTarget).next('.expander').slideToggle();
 	}
+
+	//Set loaded variable after page load to run content animation entering screen
 	$scope.$on('$viewContentLoaded', function(){
 		$timeout(function(){
 			$scope.loaded = true;
 		}, 100);
 	});
 
+	//Check user credentials on page navigation and navigate to page
 	$scope.$on('$stateChangeStart', function(event, toState, toParams, fromState){
 		$scope.loaded = false;
 		if (fromState.name != 'login' || toState.name != 'login'){
@@ -54,6 +62,7 @@ app.controller('CMSController', ['$cookies', '$state', '$rootScope', '$scope', '
 		}
 	});
 
+	//Determine if image input value is correct format before checking server for image 
 	$rootScope.pathCheck = function(url){
 		if(url.indexOf('.') != -1) {
 			var ext = url.split('.').reverse();
@@ -67,6 +76,7 @@ app.controller('CMSController', ['$cookies', '$state', '$rootScope', '$scope', '
 
 	};
 
+	//Delete user credentials cookie on logout
 	$scope.logout = function() {
 		$rootScope.user = {};
 		loginService.logout().then(function(response) {
@@ -76,6 +86,7 @@ app.controller('CMSController', ['$cookies', '$state', '$rootScope', '$scope', '
 	}
 }]);
 
+//Map UI states
 app.config(function($stateProvider, $urlRouterProvider){
 	$urlRouterProvider.otherwise('intro');
 	$stateProvider.state('login', {
@@ -105,13 +116,19 @@ app.config(function($stateProvider, $urlRouterProvider){
 		url: '/intro',
 		templateUrl: 'templates/introContent.html',
 		controller: ['$rootScope', '$timeout', '$scope', 'pageContent', function($rootScope, $timeout, $scope, pageContent){
+
+			//Initialize intro page content object
 			$scope.introContent = {
 				'page': 'introSection',
 				'pageContent': {}
 			}
+
+			//Get content values from DB
 			pageContent.getContent($scope.introContent.page).then(function(response){
 				$scope.introContent.pageContent = response.data[0];
 			});
+
+			//Send new page content object to set content service
 			$scope.submitIntroData = function(){
 				pageContent.setContent($scope.introContent).then(function(){
 					$rootScope.submitted = true;
