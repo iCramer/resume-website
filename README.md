@@ -1,4 +1,4 @@
-# ResumeWebsite
+# AngularJS Content Management System
 AngualrJS Application with custom CMS
 
 This is the source code to a resume website I created to showcase my skills and accomplishments.
