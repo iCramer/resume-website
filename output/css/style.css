@@ -1115,6 +1115,7 @@ header#nav #nav-icon {
   position: fixed;
   right: -69px;
   top: -69px;
+  cursor: pointer;
 }
 header#nav #nav-icon hr {
   -webkit-transition: all 0.3s ease;
@@ -1449,31 +1450,31 @@ section#intro h1:first-of-type {
   font-size: 99px;
   line-height: 75px;
 }
-@media (min-width: 480px) {
+@media (min-width: 481px) {
   section#intro h1:first-of-type {
     font-size: 137px;
     line-height: 101px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 770px) {
   section#intro h1:first-of-type {
     font-size: 114px;
     line-height: 84px;
   }
 }
-@media (min-width: 996px) {
+@media (min-width: 997px) {
   section#intro h1:first-of-type {
     font-size: 123px;
     line-height: 85px;
   }
 }
-@media (min-width: 1250px) {
+@media (min-width: 1251px) {
   section#intro h1:first-of-type {
     font-size: 134px;
     line-height: 97px;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1501px) {
   section#intro h1:first-of-type {
     font-size: 167px;
     line-height: 117px;
@@ -1490,31 +1491,31 @@ section#intro h1:last-of-type {
   font-size: 107px;
   line-height: 83px;
 }
-@media (min-width: 480px) {
+@media (min-width: 481px) {
   section#intro h1:last-of-type {
     font-size: 184px;
     line-height: 142px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 770px) {
   section#intro h1:last-of-type {
     font-size: 142px;
-    line-height: 124px;
+    line-height: 120px;
   }
 }
-@media (min-width: 996px) {
+@media (min-width: 997px) {
   section#intro h1:last-of-type {
     font-size: 176px;
     line-height: 130px;
   }
 }
-@media (min-width: 1250px) {
+@media (min-width: 1251px) {
   section#intro h1:last-of-type {
     font-size: 185px;
     line-height: 136px;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1501px) {
   section#intro h1:last-of-type {
     font-size: 207px;
     line-height: 156px;
@@ -1528,8 +1529,8 @@ section#intro h1:last-of-type {
 }
 section#intro h2 {
   clear: both;
-  font-size: 20px;
   text-indent: 5px;
+  font-size: 20px;
   line-height: 20px;
 }
 @media (max-width: 996px) {
@@ -1541,33 +1542,32 @@ section#intro h2 {
     display: none;
   }
 }
-@media (min-width: 480px) {
+@media (min-width: 481px) {
   section#intro h2 {
     font-size: 34px;
     line-height: 36px;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 770px) {
   section#intro h2 {
-    letter-spacing: 2px;
-    font-size: 22px;
-    line-height: 19px;
+    font-size: 26px;
+    line-height: 15px;
   }
 }
-@media (min-width: 996px) {
+@media (min-width: 997px) {
   section#intro h2 {
     letter-spacing: 1px;
     font-size: 31px;
     line-height: 38px;
   }
 }
-@media (min-width: 1250px) {
+@media (min-width: 1251px) {
   section#intro h2 {
     font-size: 32px;
     line-height: 40px;
   }
 }
-@media (min-width: 1500px) {
+@media (min-width: 1501px) {
   section#intro h2 {
     font-size: 36px;
     line-height: 51px;
@@ -1785,6 +1785,27 @@ section#intro .scroll-message .arrow {
   position: relative;
   float: left;
   z-index: -1;
+  margin-top: -540px;
+}
+@media (max-width: 1500px) {
+  #cityAnimation {
+    margin-top: -393px;
+  }
+}
+@media (max-width: 1250px) {
+  #cityAnimation {
+    margin-top: -305px;
+  }
+}
+@media (max-width: 996px) {
+  #cityAnimation {
+    margin-top: -253px;
+  }
+}
+@media (max-width: 769px) {
+  #cityAnimation {
+    margin-top: 0;
+  }
 }
 #cityAnimation svg {
   width: 100%;
@@ -1795,26 +1816,6 @@ section#intro .scroll-message .arrow {
   top: 0;
   left: 0;
   opacity: .9;
-}
-@media (min-width: 769px) {
-  #cityAnimation {
-    margin-top: -253px;
-  }
-}
-@media (min-width: 996px) {
-  #cityAnimation {
-    margin-top: -305px;
-  }
-}
-@media (min-width: 1250px) {
-  #cityAnimation {
-    margin-top: -393px;
-  }
-}
-@media (min-width: 1500px) {
-  #cityAnimation {
-    margin-top: -540px;
-  }
 }
 #cityOutline {
   -webkit-transition: all 0.6s ease;
@@ -2000,6 +2001,10 @@ section#experience .project img {
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+}
+section#experience .project .flat-button span {
+  vertical-align: text-top;
+  margin: 1px 5px 0 0;
 }
 section#experience .project .details-link {
   position: absolute;
@@ -2437,17 +2442,17 @@ section#testimonials .quotes .quote:nth-child(1),
 section#testimonials .quotes .quote:nth-child(2) {
   position: relative;
 }
-@media (min-width: 769px) {
+@media (min-width: 770px) {
   section#testimonials .quotes .quote {
     max-width: 370px;
   }
 }
-@media (min-width: 996px) {
+@media (min-width: 997px) {
   section#testimonials .quotes .quote {
     max-width: 480px;
   }
 }
-@media (min-width: 1250px) {
+@media (min-width: 1251px) {
   section#testimonials .quotes .quote {
     max-width: 595px;
   }
@@ -2560,7 +2565,7 @@ section#about #self-pic-drawing svg {
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-@media (min-width: 769px) {
+@media (min-width: 770px) {
   section#about #self-pic-drawing.draw svg {
     opacity: 1;
     -webkit-opacity: 1;
