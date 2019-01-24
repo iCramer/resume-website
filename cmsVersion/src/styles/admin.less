@@ -1,0 +1,150 @@
+@import 'style.less';
+@import 'variables.less';
+
+body {
+	.lightBackground();
+	background-size: 100%;
+	padding: 100px 0;
+}
+
+button[type="submit"] {
+	float: right;
+}
+
+h3 {
+	text-align: center;
+}
+
+.checkbox {
+	input {
+		    margin-top: 9px;
+	}
+}
+.accordion {
+	margin-bottom: 40px;
+	h4 {
+		cursor: pointer;
+		background: @darkBlue url(../images/headerBG.png) 50% 0 no-repeat;
+		color: @white;
+		text-align: center;
+		padding: 10px 0;
+	}
+	.expander {
+		display: none;
+	}
+}
+
+.image-input {
+	position: relative;
+	input {
+		padding-right: 35px;
+	}
+	img {
+		max-height: 27px;
+    	position: absolute;
+    	right: 5px;
+    	bottom: 3px;
+	}
+}
+
+header#nav {
+	top: -20px;
+}
+
+.view-content {
+	.opacity(0);
+	position: relative;
+	left: -20px;
+	&.active {
+		.transition(all, .5s, ease);
+		left: 0;
+		.opacity(1);
+	}
+}
+
+section#skillsEditor {
+	h4 {
+		background: @darkBlue url(../images/headerBG.png) 50% 0 no-repeat;
+		color: @white;
+		text-align: center;
+		padding: 10px 0;
+	}
+	textarea {
+		height: 150px;
+	}
+	.new-tool {
+		width: 50%;
+		margin: 0 auto;
+		text-align: center;
+		.form-group {
+		    width: 47%;
+		    display: inline-block;
+		    vertical-align: top;
+		    margin: 0 5px;
+		}
+		@media (max-width: @tablet) {
+			width: 90%;
+		}
+	}
+	.images {
+		text-align: center;
+		div {
+			width: 60px;
+			margin: 10px 11px;
+			display: inline-block;
+			img {
+				margin-bottom: 5px;
+			}
+			i {
+				color: #C00;
+				vertical-align: middle;
+				margin: 0 3px 3px 0;
+			}
+		}
+	}
+}
+
+section#experienceEditor {
+	.accordion {
+		textarea {
+			height: 150px;
+		}
+	}
+}
+section#testimonialsEditor {
+	textarea {
+		height: 150px;
+	}
+}
+
+section#aboutEditor {
+	textarea {
+		height: 150px;
+	}
+}
+
+.loginForm {
+	width: 60%;
+	max-width: 400px;
+	margin: 0 auto;
+	button[type="submit"] {
+		float: none;
+	}
+}
+
+.logout {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    color: @white;
+    font-size: 15px;
+    &:hover {
+    	color: @white;
+    }
+    @media (max-width: @tablet) {
+    	right: auto;
+    	top: 1%;
+    	left: 10px;
+    	z-index: -1;
+    }
+}

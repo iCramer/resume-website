@@ -1,0 +1,39 @@
+<section id="what-i-do" in-view="background-grow">
+  <header>
+    <h1 in-view="animate">{{skillsPageContent.bodyCopy.title}}</h1>
+    <div in-view="animate" ng-include="svgPath(skillsPageContent.bodyCopy.headerIcon)"></div>
+  </header>
+  <div class="container">
+    <div class="row slide-up" in-view="animate">
+      <div class="col-md-6 skill-category">
+        <div class="row">
+          <div class="col-sm-4 col-md-12" in-view="draw">
+            <div class="svg-drawing" in-view="draw" ng-include="svgPath(skillsPageContent.bodyCopy.skillIcon1)"></div>
+          </div>
+          <div class="col-sm-8 col-md-12 slider">
+            <h2>{{skillsPageContent.bodyCopy.skillTitle1}}</h2>
+            <p>{{skillsPageContent.bodyCopy.skillContent1}}</p>
+            <div class="weapons">
+              <h3>{{skillsPageContent.bodyCopy.toolsHeader}}</h3>
+              <img ng-repeat="item in designTools" ng-src="images/{{item.image}}" alt="{{item.image}}" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 skill-category">
+        <div class="row">
+          <div class="col-sm-4 col-md-12" in-view="draw">
+            <div class="svg-drawing" in-view="draw" ng-include="svgPath(skillsPageContent.bodyCopy.skillIcon2)"></div>
+          </div>
+          <div class="col-sm-8 col-md-12 slider">
+            <h2>{{skillsPageContent.bodyCopy.skillTitle2}}</h2>
+            <p>{{skillsPageContent.bodyCopy.skillContent2}}</p>
+            <div class="weapons">
+              <h3>{{skillsPageContent.bodyCopy.toolsHeader}}</h3>
+              <img ng-repeat="item in devTools" ng-src="images/{{item.image}}" alt="{{item.image}}" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

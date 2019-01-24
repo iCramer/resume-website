@@ -1,0 +1,73 @@
+<section id="experience" class="lightBackground">
+  <header class="blue-header">
+    <div class="svg-drawing" in-view="draw" ng-include="svgPath(experiencePageContent.headerIcon)"></div>
+    <h1 in-view="animate">{{experiencePageContent.title}}</h1>
+  </header>
+  <div class="container text-center">
+    <div class="row bounce-in" in-view="animate">
+      <div class="col-lg-offset-1 col-lg-10 col-sm-12">
+        <p class="intro-text">{{experiencePageContent.introCopy}}</p>
+        <h3>{{experiencePageContent.gridHeader}}</h3>
+      </div>
+    </div>
+    <div class="grid-wrapper slide-up" ng-class="{'view-full': viewFull, 'overflow-visible': detailView}" in-view="animate">
+      <div class="grid">
+        <div class="project slider" ng-click="showDetailsMobile($index)" id="project{{$index}}" ng-repeat="project in projects">
+          <img ng-src="images/logos/{{project.logo}}" alt="{{project.company}} Logo" />
+          <img class="backgroundImg" ng-src="images/{{project.backgroundImg}}" alt="{{project.company}} Background" />
+          <div class="details-link" ng-click="showDetails($index)"><i class="glyphicon glyphicon-plus-sign"></i>Details</div>
+          <div class="mask">
+            <h3>{{project.company}}</h3>
+            <p>{{project.projectSummary}}</p>
+            <button type="button" class="flat-button" ng-click="showDetails($index)"><span class="glyphicon glyphicon-plus-sign"></span>View Details</button>
+          </div>
+        </div>
+        <div class="placeholder">
+          <div class="front"  ng-class="{'transitions': transitions}">
+            <img ng-src="images/logos/{{projectDetails.logo}}" alt="{{project.company}} Logo" />
+            <img class="backgroundImg" ng-src="images/{{projectDetails.backgroundImg}}" alt="{{project.company}} Background" />
+          </div>
+          <div class="back"  ng-class="{'transitions': transitions}"></div>
+        </div>
+      </div>
+      
+    </div>
+    <div id="project-details" ng-class="toggleDetails">
+      <header>
+        <button type="button" class="closeBox" ng-click="hideDetails()"><span class="glyphicon glyphicon-remove-sign"></span></button>
+        <img class="company-logo" ng-src="images/logos/{{projectDetails.logo}}" alt="{{projectDetails.company}} Logo" />
+      </header>
+      <div class="container">
+      <table>
+        <tr>
+          <td class="title">
+            <span class="glyphicon glyphicon-paperclip"></span>
+            <label class="h4">Project</label>
+          </td>
+          <td class="body">
+            <p ng-bind="projectDetails.projectSummary"></p>
+          </td>
+        </tr>
+        <tr>
+          <td class=" title">
+            <span class="glyphicon glyphicon-wrench"></span>
+            <label class="h4">Development Tools</label>
+          </td>
+          <td class="body">
+            <p ng-bind="projectDetails.projectTools"></p>
+          </td>
+        </tr>
+        <tr>
+          <td class="title">
+            <span class="glyphicon glyphicon-list"></span>
+            <label class="h4">Description</label>
+          </div>
+          <td class="body">
+            <div class="details-body" ng-bind-html="projectDetails.description"></div>
+          </td>
+        </tr>
+      </table>
+      </div>
+    </div>
+  </div>
+</section>
