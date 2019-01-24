@@ -8,7 +8,7 @@ app.factory('pageContent', function($http, $q){
 		var deferred = $q.defer();
 		$http({
 			method: 'GET',
-			url: '/resume-website/output/getContent.php',
+			url: '../getContent.php',
 			params: {'page': page}
 		})
 		.then(function successCallback(response) {
@@ -25,7 +25,7 @@ app.factory('pageContent', function($http, $q){
 		var deferred = $q.defer();
 		$http({
 			method: 'POST',
-			url: '/resume-website/output/updateContent.php',
+			url: '../updateContent.php',
 			data: angular.element.param(pageData),
 			headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 		})

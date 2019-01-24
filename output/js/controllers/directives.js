@@ -5,7 +5,7 @@ var app = angular.module('profileApp.directives', ['profileApp.contact', 'profil
 app.directive('skillsSection', function(){
 	return {
 		restrict: 'E',
-		templateUrl: 'templates/skills-section.html',
+		templateUrl: '../../templates/skills-section.html',
 		controller: function($rootScope, $scope, pageContent) {
 			//Initialize object to hold page content
 			$scope.skillsPageContent = {
@@ -36,7 +36,7 @@ app.directive('skillsSection', function(){
 app.directive('experienceSection', function(){
 	return {
 		restrict: 'E',
-		templateUrl: 'templates/experience-section.html',
+		templateUrl: '../../templates/experience-section.html',
 		controller: 'ExperienceController'
 	}
 });
@@ -44,7 +44,7 @@ app.directive('experienceSection', function(){
 app.directive('testimonialsSection', function(){
 	return {
 		restrict: 'E',
-		templateUrl: 'templates/testimonials-section.html',
+		templateUrl: '../../templates/testimonials-section.html',
 		controller: function($rootScope, $scope, pageContent){
 			$scope.activeQuotes = 0;
 
@@ -72,7 +72,7 @@ app.directive('testimonialsSection', function(){
 app.directive('aboutSection', function(){
 	return {
 		restrict: 'E',
-		templateUrl: 'templates/about-section.html',
+		templateUrl: '../../templates/about-section.html',
 		controller: function($rootScope, $scope, pageContent) {
 			//Initialize object to hold page content
 			$scope.aboutPageContent = {
@@ -97,7 +97,7 @@ app.directive('aboutSection', function(){
 	}
 });
 
-app.directive('contactSection', function(){
+app.directive('../../contactSection', function(){
 	return {
 		restrict: 'E',
 		templateUrl: 'templates/contact-section.html',
