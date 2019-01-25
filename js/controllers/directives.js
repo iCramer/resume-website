@@ -6,29 +6,7 @@ app.directive('skillsSection', function(){
 	return {
 		restrict: 'E',
 		templateUrl: '../../templates/skills-section.html',
-		controller: function($rootScope, $scope, pageContent) {
-			//Initialize object to hold page content
-			$scope.skillsPageContent = {
-				'bodyCopy': {},
-				'tools': []
-			};
-			$scope.devTools = [];
-			$scope.designTools = [];
-
-			//Get page content from CMS
-			pageContent.getContent('skillsSection').then(function(response){
-				$rootScope.navItems.page2 = response.data.bodyCopy.title;
-				$scope.skillsPageContent.bodyCopy = response.data.bodyCopy;
-				$scope.skillsPageContent.tools = response.data.tools;
-				angular.forEach($scope.skillsPageContent.tools, function(item){
-					if(item.category == 'dev') {
-						$scope.devTools.push(item);
-					}
-					else if(item.category == 'design') {
-						$scope.designTools.push(item);
-					}
-				});
-			});
+		controller: function($rootScope, $scope) {
 		}
 	}
 });
@@ -45,21 +23,38 @@ app.directive('testimonialsSection', function(){
 	return {
 		restrict: 'E',
 		templateUrl: '../../templates/testimonials-section.html',
-		controller: function($rootScope, $scope, pageContent){
+		controller: function($rootScope, $scope){
 			$scope.activeQuotes = 0;
 
 			//Initialize object to hold page content
 			$scope.testimonialsPageContent = {
-				'bodyCopy': {},
-				'quotes': []
+				'quotes': [
+				   {
+				      "id":"1",
+				      "author":"Greg Airel, Avantia",
+				      "image":"greg.jpg",
+				      "quote":"Ian has a true passion for cutting edge designs and web technology. In my time working with him, there was a never a task he didn't put his all into. He constantly pushed himself and others to perform beyond \"just getting the job done\". Ian's constant learning and incorporation of various cutting edge technologies into projects is what drove many successful campaigns to their completion."
+				   },
+				   {
+				      "id":"3",
+				      "author":"Don Crislip, Medical Mutual",
+				      "image":"don.jpg",
+				      "quote":"When I first interviewed Ian at Medical Mutual I was immediately blown away by his design and creative skills. He was filled with energy, confidence, and enthusiasm to learn. Ian lived up to my impressions and became a very valuable member to our team. I really enjoyed working with Ian and I would gladly be on a team with him again. He has a great personality, enthusiasm, critical eye, and talent for design and development."
+				   },
+				   {
+				      "id":"5",
+				      "author":"Seth Coelen, Medical Mutual",
+				      "image":"seth.jpg",
+				      "quote":"Ian is a great team player with a passion for front-end development. He is extremely skilled at Javascript, HTML\/CSS and responsive design. I was impressed with how he interacted between both designers and back-end developers to get tasks done. I really enjoy working with Ian because he is easy to collaborate with and is always able to provide constructive feedback. Ian's eye for design and ability to take ideas from concept to creation is great asset to any team."
+				   },
+				   {
+				      "id":"6",
+				      "author":"Martin Hlavaty, Avantia",
+				      "image":"martin.jpg",
+				      "quote":"Ian is a very talented web and graphic designer with a unique artistic flair, fine-tuned to capture a client's needs visually. His ability to take on new challenges and master new technologies makes him a great asset to any client. He is willing to offer input and work hard on any project that is assigned to him."
+				   }
+				]
 			};
-
-			//Get page content from CMS
-			pageContent.getContent('testimonialsSection').then(function(response){
-				$rootScope.navItems.page4 = response.data.bodyCopy.title;
-				$scope.testimonialsPageContent.bodyCopy = response.data.bodyCopy;
-				$scope.testimonialsPageContent.quotes = response.data.quotes;
-			});
 			
 			//Show selected quotes page
 			$scope.rotateCarousel = function(nextQuotes) {
@@ -73,22 +68,7 @@ app.directive('aboutSection', function(){
 	return {
 		restrict: 'E',
 		templateUrl: '../../templates/about-section.html',
-		controller: function($rootScope, $scope, pageContent) {
-			//Initialize object to hold page content
-			$scope.aboutPageContent = {
-				'header': {},
-				'paragraphs': [],
-				'artLinks': []
-			};
-
-			//Get page content from CMS
-			pageContent.getContent('aboutSection').then(function(response){
-				$rootScope.navItems.page5 = response.data.header.title;
-				$scope.aboutPageContent.header = response.data.header;
-				$scope.aboutPageContent.paragraphs = response.data.paragraphs;
-				$scope.aboutPageContent.artLinks = response.data.artLinks;
-			});
-			
+		controller: function($rootScope, $scope) {
 			//Show full .png image after drawing animation completes
 			$('body').on('webkitAnimationEnd oanimationend msAnimationEnd animationend', '#self-pic-drawing svg', function(e) {
 				$('#self-pic-drawing').addClass('done');
@@ -138,7 +118,7 @@ app.directive('inView', function(){
 						$scope.backgroundGrow(element, true);
 					}
 					else if ($(element).hasClass(value)) {
-						$(element).removeClass(value);
+						$(element).removeClass(value); 
 					}
 				}
 			}

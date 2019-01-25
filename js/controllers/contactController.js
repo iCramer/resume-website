@@ -2,15 +2,7 @@
 
 var app = angular.module('profileApp.contact', []);
 
-app.controller('ContactController', ['$rootScope', '$scope', '$http', '$timeout', 'pageContent', '$sanitize', function($rootScope, $scope, $http, $timeout, pageContent, $sanitize){
-
-	//Initialize objec to hold page content and retrive page content from database
-	$scope.contactPageContent = [];
-	pageContent.getContent('contactSection').then(function(response){
-		$rootScope.navItems.page6 = response.data[0].title;
-		$scope.contactPageContent = response.data[0];
-	});
-
+app.controller('ContactController', ['$rootScope', '$scope', '$http', '$timeout', '$sanitize', function($rootScope, $scope, $http, $timeout, $sanitize){
 	$scope.contact = {};
 	$scope.submitted = false;
 

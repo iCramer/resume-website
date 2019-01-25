@@ -1,8 +1,8 @@
 //profileController.js
 
-var app = angular.module('profileApp', ['profileApp.directives', 'profileServices', 'ngSanitize']);
+var app = angular.module('profileApp', ['profileApp.directives', 'ngSanitize']);
 
-app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageContent', '$sanitize', function($rootScope, $scope, $timeout, pageContent, $sanitize) {
+app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', '$sanitize', function($rootScope, $scope, $timeout, $sanitize) {
 	//Set IE variable to use in places to where javascript is used to replace CSS animations
 	var isIE = /*@cc_on!@*/false || !!document.documentMode;
 	if (isIE) { $('html').addClass('IE') };
@@ -20,21 +20,6 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', 'pageCo
 	};
 
 	//Initialize page titles object to be populated from CMS
-	$rootScope.navItems = {
-		'page1': 'Home',
-		'page2': '',
-		'page3': '',
-		'page4': '',
-		'page5': '',
-		'page6': '',
-	};
-	$scope.introPageContent = {};
-	
-	//Get page content from CMS
-	pageContent.getContent('introSection').then(function(response){
-		$scope.introPageContent = response.data[0];
-	});
-
 	$scope.loadingAnimationOver = false;
 	$rootScope.noScroll = false;
 	$scope.navScrolled = false;	
