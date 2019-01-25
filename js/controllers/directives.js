@@ -22,7 +22,7 @@ app.directive('experienceSection', function(){
 app.directive('testimonialsSection', function(){
 	return {
 		restrict: 'E',
-		templateUrl: '/templates/testimonials-section.html',
+		templateUrl: 'templates/testimonials-section.html',
 		controller: function($rootScope, $scope){
 			$scope.activeQuotes = 0;
 
