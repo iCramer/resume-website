@@ -1,0 +1,32 @@
+<section id="about" class="lightBackground">
+	<header class="blue-header" in-view="animate">
+		<div class="svg-drawing" in-view="draw">
+			<div ng-include="svgPath(IanLogo.svg)"></div>
+		</div>
+		<h1 in-view="animate">About Me</h1>
+	</header>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 slide-up" in-view="animate">
+				<div id="self-pic-drawing" in-view="draw">
+					<div ng-if="!mobile" ng-include="'images/SVGs/daVinci.svg'"></div>
+					<img id="self-pic" src="images/daVinci.png" alt="Vitruvian Man" />
+				</div>
+				<div class="text-block slider margin" ng-repeat="textBlock in aboutPageContent.paragraphs">
+					<h2>Career Goals</h2>
+					<p>I am a self starter and my passion for learning keeps me current with the latest design trends and web technologies. Being involved in design and development gives me an understanding of the potentials and limitations of both and leads to more harmonious applications. My goal is to use my creativity and communication skills to be a strategic player in web development.</p>
+				</div>
+				<div class="text-block slider margin" ng-repeat="textBlock in aboutPageContent.paragraphs">
+					<h2>Background</h2>
+					<p>I was born and raised in Northeast Ohio and earned my bachelor's degree in studio art from Baldwin-Wallace University. Most of my knowledge of web design and client side development has been self-taught, but my education gave me a solid foundation to build from and my fine art background allows me to create more unique, artistic designs. Outside of the web world I am still active in my roots of drawing, painting, and illustration.</p>
+				</div>
+				<div class="portfolioLinks bounce-in" in-view="animate">
+					<a href="https://www.behance.net/iancramer" target="_blank"><img ng-src="images/behanceLogo.png" alt="Behance" /></a>
+					<a href="https://www.dribbble.com/iancramer" target="_blank"><img ng-src="images/dribbbleLogo.png" alt="Dribbble" /></a>
+					<a href="https://www.github.com/iancramer" target="_blank"><img ng-src="images/githubLogo.png" alt="GitHub" /></a>
+					<h4>Check out my online portfolios!</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
