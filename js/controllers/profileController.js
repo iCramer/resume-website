@@ -15,7 +15,7 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', '$sanit
 	//Set SVG paths in ng-include statements
 	$rootScope.svgPath = function(file) {
 		if (file != '' && file != undefined) {
-			return 'images/SVGs/' + file;
+			return '../images/SVGs/' + file;
 		}
 	};
 
