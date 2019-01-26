@@ -2,7 +2,7 @@
 
 var app = angular.module('profileApp.experience', []);
 
-app.controller('ExperienceController', ['$rootScope', '$scope', '$timeout', '$sanitize', function($rootScope, $scope, $timeout, $sanitize){
+app.controller('ExperienceController', ['$rootScope', '$scope', '$timeout', function($rootScope, $scope, $timeout){
 
 	$scope.projects = [
 	   {
