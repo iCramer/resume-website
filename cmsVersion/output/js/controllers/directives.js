@@ -97,7 +97,7 @@ app.directive('aboutSection', function(){
 	}
 });
 
-app.directive('../../contactSection', function(){
+app.directive('contactSection', function(){
 	return {
 		restrict: 'E',
 		templateUrl: 'templates/contact-section.html',
