@@ -123,6 +123,13 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', '$sanit
 		}
 		$timeout(function(){
 			$scope.animationOver = true;
+			$timeout(function(){
+				$rootScope.navVisible = true;
+			},600);
+		
+			$scope.$apply();
+		
+			$('#cityOutline').addClass('disappear');
 		}, 3000);
 
 
