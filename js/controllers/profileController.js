@@ -94,16 +94,16 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', '$sanit
 	});
 
 	//Run title, navigation, and main image animations when opening drawing animation ends
-	$('body').bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', '#cityOutline svg', function(e) {
-		$scope.animationOver = true;
-		$timeout(function(){
-			$rootScope.navVisible = true;
-		},600);
+	// $('body').bind('webkitAnimationEnd oanimationend msAnimationEnd animationend', '#cityOutline svg', function(e) {
+	// 	$scope.animationOver = true;
+	// 	$timeout(function(){
+	// 		$rootScope.navVisible = true;
+	// 	},600);
 		
-		$scope.$apply();
+	// 	$scope.$apply();
 		
-		$('#cityOutline').addClass('disappear');
-	});
+	// 	$('#cityOutline').addClass('disappear');
+	// });
 
 	//Hide loading screen after it slides up
 	$('body').bind('webkitTransitionEnd otransitionend msTransitionEnd transitionend', '.circle', function(e) {
@@ -121,6 +121,9 @@ app.controller('ProfileController', ['$rootScope', '$scope', '$timeout', '$sanit
 		else {
 			$rootScope.navVisible = true;
 		}
+		$timeout(function(){
+			$scope.animationOver = true;
+		}, 3000);
 
 
 		//Javascript function to run "stroke-dasharray" animation in IE. IE does not support "stroke-dasharray" css animation
