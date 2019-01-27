@@ -2,7 +2,7 @@
 	<header>
 		<div class="svg-drawing" in-view="draw" ng-include="svgPath(contactPageContent.headerIcon)"></div>
 		<h1 in-view="animate">{{contactPageContent.title}}</h1>
-		<p in-view="animate" class="animate">Send me an email to <a href="mailto:iancramer55@gmail.com">iancramer55@gmail.com</a> or fill out the form below.</p>
+		<p ng-bind-html="contactPageContent.intro" in-view="animate"></p>
 	</header>
 	<div class="container slide-up" in-view="animate">
 
