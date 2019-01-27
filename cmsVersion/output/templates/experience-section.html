@@ -12,15 +12,15 @@
     </div>
     <div class="grid-wrapper slide-up" ng-class="{'view-full': viewFull, 'overflow-visible': detailView}" in-view="animate">
       <div class="grid">
-        <div class="project slider" ng-click="showDetailsMobile($index)" id="project{{$index}}" ng-repeat="project in projects">
-          <img ng-src="images/logos/{{project.logo}}" alt="{{project.company}} Logo" />
-          <img class="backgroundImg" ng-src="images/{{project.backgroundImg}}" alt="{{project.company}} Background" />
-          <div class="details-link" ng-click="showDetails($index)"><i class="glyphicon glyphicon-plus-sign"></i>Details</div>
-          <div class="mask">
-            <h3>{{project.company}}</h3>
-            <p>{{project.projectSummary}}</p>
-            <button type="button" class="flat-button" ng-click="showDetails($index)"><span class="glyphicon glyphicon-plus-sign"></span>View Details</button>
-          </div>
+        <div class="project slider" ng-click="showDetailsMobile($index)" id="project{{$index}}" ng-repeat="project in projects" ng-if="$index < 3">
+            <img ng-src="images/logos/{{project.logo}}" alt="{{project.company}} Logo" />
+            <img class="backgroundImg" ng-src="images/{{project.backgroundImg}}" alt="{{project.company}} Background" />
+            <div class="details-link" ng-click="showDetails($index)"><i class="glyphicon glyphicon-plus-sign"></i>Details</div>
+            <div class="mask">
+              <h3>{{project.company}}</h3>
+              <p>{{project.projectSummary}}</p>
+              <button type="button" class="flat-button" ng-click="showDetails($index)"><span class="glyphicon glyphicon-plus-sign"></span>View Details</button>
+            </div>
         </div>
         <div class="placeholder">
           <div class="front"  ng-class="{'transitions': transitions}">

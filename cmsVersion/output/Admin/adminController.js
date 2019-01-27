@@ -53,7 +53,7 @@ app.controller('CMSController', ['$cookies', '$state', '$rootScope', '$scope', '
 		$scope.loaded = false;
 		if (fromState.name != 'login' || toState.name != 'login'){
 			loginService.login($rootScope.user).then(function(response) {
-				if(response.data.success) {
+				if(response.status == 200) {
 				}
 				else {
 					$state.go('login');
@@ -95,7 +95,7 @@ app.config(function($stateProvider, $urlRouterProvider){
 		controller: ['$sanitize', '$cookies', '$rootScope', '$scope', '$http', '$state', 'loginService', function($sanitize, $cookies, $rootScope, $scope, $http, $state, loginService){
 			$scope.login = function(){
 				loginService.login($rootScope.user).then(function(response) {
-					if(response.data.success) {
+					if(response.status == 200) {
 						$cookies.putObject('user', $rootScope.user);
 						$state.go('admin.intro');
 					}
