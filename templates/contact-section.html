@@ -18,19 +18,19 @@
 		<p ng-bind-html="contactPageContent.intro" in-view="animate"></p>
 	</header>
 	<div class="container slide-up" in-view="animate">
-
-		<form ng-submit="send(contactForm.$valid)" name="contactForm" class="slider" novalidate>
+action="https://formspree.io/your@email.com" method="POST"
+		<form action="https://formspree.io/iancramer55@gmail.com" method="POST" name="contactForm" class="slider">
 			<div class="row">
 				<div class="col-sm-offset-2 col-sm-4 col-md-offset-3 col-md-3 form-group">
 					<label>Name*</label>
-					<input ng-model="contact.name" type="text" class="form-control" name="messageName" required />
+					<input type="text" ng-model="contact.name" class="form-control" name="Name" required />
 					<div ng-show="contactForm.$submitted || contactForm.messageName.$touched">
 						<p class="validation" ng-show="contactForm.messageName.$error.required">Name is  required field</p>
 					</div>
 				</div>
 				<div class="col-sm-4 col-md-3 form-group">
 					<label>Email*</label>
-					<input ng-model="contact.email" name="messageEmail" type="email" class="form-control" required />
+					<input ng-model="contact.email" name="Email" type="email" class="form-control" required />
 					<div ng-show="contactForm.$submitted || contactForm.messageEmail.$touched">
 						<p class="validation" ng-show="contactForm.messageEmail.$error.required">Email is  required field</p>
 						<p class="validation" ng-show="contactForm.messageEmail.$dirty && contactForm.messageEmail.$error.email">
@@ -41,7 +41,7 @@
 			<div class="row">
 				<div class="col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 form-group">
 					<label>Message*</label>
-					<textarea ng-model="contact.message" class="form-control" rows="7" name="messageBody" required ></textarea>
+					<textarea ng-model="contact.message" class="form-control" rows="7" name="Message" required ></textarea>
 					<div ng-show="contactForm.$submitted || contactForm.messageBody.$touched">
 						<p class="validation" ng-show="contactForm.messageBody.$error.required">Message is a required field</p>
 					</div>
@@ -52,7 +52,7 @@
 			</div>
 		</form>
 	</div>
-	<p class="copyright">&copy;Copyright 2016 Ian Cramer</p>
+	<p class="copyright">&copy;Copyright 2019 Ian Cramer</p>
 	<div class="submit-feedback" ng-class="{'animate': submitted}">
 		<p>Message Sent</p>
 </div>
