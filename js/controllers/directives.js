@@ -29,33 +29,39 @@ app.directive('testimonialsSection', function(){
 			//Initialize object to hold page content
 			$scope.testimonialsPageContent = {
 				'quotes': [
+					{
+						 "id":"1",
+						 "author":"Harp Gasol, FireEye",
+						 "image":"harp.jpg",
+						 "quote":`Ian worked as our UX/UI engineer and designer on a new innovative threat hunting platform which detects signals from threat actors both domestically and espionage groups around the globe. His work was crucial in designing the interface which allows analysts to utilize the platform fast, efficiently and effectively and to funnel the right data at the right time. Ian’s work was above par, he has great attention to detail, handcrafts his work to perfection, he executes and gets things done. He was a very diligent and credible member of our team and he helped us take the platform to GA release and on time. I hold high regard for Ian and his work and highly recommend Ian as a very professional, experienced and robust UX/UI designer/engineer, definitely a premier in his industry.`
+					},
+					{
+						 "id":"2",
+						 "author":"Don Crislip, Medical Mutual",
+						 "image":"don.jpg",
+						 "quote":"When I first interviewed Ian at Medical Mutual I was immediately blown away by his design and creative skills. He was filled with energy, confidence, and enthusiasm to learn. Ian lived up to my impressions and became a very valuable member to our team. I really enjoyed working with Ian and I would gladly be on a team with him again. He has a great personality, enthusiasm, critical eye, and talent for design and development."
+					},
 				   {
-				      "id":"1",
+				      "id":"3",
 				      "author":"Greg Airel, Avantia",
 				      "image":"greg.jpg",
 				      "quote":"Ian has a true passion for cutting edge designs and web technology. In my time working with him, there was a never a task he didn't put his all into. He constantly pushed himself and others to perform beyond \"just getting the job done\". Ian's constant learning and incorporation of various cutting edge technologies into projects is what drove many successful campaigns to their completion."
 				   },
 				   {
-				      "id":"3",
-				      "author":"Don Crislip, Medical Mutual",
-				      "image":"don.jpg",
-				      "quote":"When I first interviewed Ian at Medical Mutual I was immediately blown away by his design and creative skills. He was filled with energy, confidence, and enthusiasm to learn. Ian lived up to my impressions and became a very valuable member to our team. I really enjoyed working with Ian and I would gladly be on a team with him again. He has a great personality, enthusiasm, critical eye, and talent for design and development."
-				   },
-				   {
-				      "id":"5",
+				      "id":"4",
 				      "author":"Seth Coelen, Medical Mutual",
 				      "image":"seth.jpg",
 				      "quote":"Ian is a great team player with a passion for front-end development. He is extremely skilled at Javascript, HTML\/CSS and responsive design. I was impressed with how he interacted between both designers and back-end developers to get tasks done. I really enjoy working with Ian because he is easy to collaborate with and is always able to provide constructive feedback. Ian's eye for design and ability to take ideas from concept to creation is great asset to any team."
-				   },
-				   {
-				      "id":"6",
-				      "author":"Martin Hlavaty, Avantia",
-				      "image":"martin.jpg",
-				      "quote":"Ian is a very talented web and graphic designer with a unique artistic flair, fine-tuned to capture a client's needs visually. His ability to take on new challenges and master new technologies makes him a great asset to any client. He is willing to offer input and work hard on any project that is assigned to him."
 				   }
+				   // {
+				   //    "id":"6",
+				   //    "author":"Martin Hlavaty, Avantia",
+				   //    "image":"martin.jpg",
+				   //    "quote":"Ian is a very talented web and graphic designer with a unique artistic flair, fine-tuned to capture a client's needs visually. His ability to take on new challenges and master new technologies makes him a great asset to any client. He is willing to offer input and work hard on any project that is assigned to him."
+				   // }
 				]
 			};
-			
+
 			//Show selected quotes page
 			$scope.rotateCarousel = function(nextQuotes) {
 				$scope.activeQuotes = nextQuotes;
@@ -118,7 +124,7 @@ app.directive('inView', function(){
 						$scope.backgroundGrow(element, true);
 					}
 					else if ($(element).hasClass(value)) {
-						$(element).removeClass(value); 
+						$(element).removeClass(value);
 					}
 				}
 			}
@@ -136,7 +142,7 @@ app.directive('inView', function(){
 				//Grow background size by .05% when scrolling down with element above the fold
 				else if($scope.windowTop < $(window).scrollTop()) {
 					$scope.bgSize = $scope.bgSize + .05;
-					
+
 				}
 
 				//Shrink background size by .05% when scrolling down with element below the fold
@@ -168,15 +174,3 @@ app.directive('inView', function(){
 		}
 	}
 });
-
-
-
-
-
-
-
-
-
-
-
-
