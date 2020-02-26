@@ -1942,13 +1942,13 @@ section#what-i-do .weapons {
   margin: 20px 0;
 }
 section#what-i-do .weapons img {
-  width: 81px;
-  margin: 10px;
+  width: 70px;
+  margin: 7px;
 }
 @media (max-width: 769px) {
   section#what-i-do .weapons img {
-    width: 55px;
-    margin: 4px;
+    width: 50px;
+    margin: 3px;
   }
 }
 section#experience {
