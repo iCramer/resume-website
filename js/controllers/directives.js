@@ -39,7 +39,7 @@ app.directive('testimonialsSection', function(){
 						 "id":"2",
 						 "author":"Don Crislip, Medical Mutual",
 						 "image":"don.jpg",
-						 "quote":"When I first interviewed Ian at Medical Mutual I was immediately blown away by his design and creative skills. He was filled with energy, confidence, and enthusiasm to learn. Ian lived up to my impressions and became a very valuable member to our team. I really enjoyed working with Ian and I would gladly be on a team with him again. He has a great personality, enthusiasm, critical eye, and talent for design and development."
+						 "quote":`When I first interviewed Ian for a contractor position we had open at Medical Mutual I was immediately blown away by his design and creative skills. He was filled with energy, confidence, and enthusiasm to learn. He knocked out a javascript task I'd given him, too. And after we hired him, Ian lived up to my impressions and became a very valuable member to our team, so valuable that I wanted to hire him as a full-time employee. I really enjoyed working with Ian and I would gladly be on a team with him again. He has a great personality, enthusiasm, critical eye, and talent for design and development.`
 					},
 				   {
 				      "id":"3",
