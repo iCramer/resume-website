@@ -31,7 +31,7 @@ app.directive('testimonialsSection', function(){
 				'quotes': [
 					{
 						 "id":"1",
-						 "author":"Harp Gasol, FireEye",
+						 "author":"Harp Gosal, FireEye",
 						 "image":"harp.jpg",
 						 "quote":`Ian worked as our UX/UI engineer and designer on a new innovative threat hunting platform which detects signals from threat actors both domestically and espionage groups around the globe. His work was crucial in designing the interface which allows analysts to utilize the platform fast, efficiently and effectively and to funnel the right data at the right time. Ian’s work was above par, he has great attention to detail, handcrafts his work to perfection, he executes and gets things done. He was a very diligent and credible member of our team and he helped us take the platform to GA release and on time. I hold high regard for Ian and his work and highly recommend Ian as a very professional, experienced and robust UX/UI designer/engineer, definitely a premier in his industry.`
 					},
