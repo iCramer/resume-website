@@ -826,7 +826,7 @@ a:hover {
   text-decoration: none;
   color: inherit;
 }
-button {
+button, a.flat-button {
   font-family: 'Londrina Solid', 'Impact', sans-serif;
   letter-spacing: 1px;
   appearance: none;
