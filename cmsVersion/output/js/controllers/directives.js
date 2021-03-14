@@ -5,7 +5,7 @@ var app = angular.module('profileApp.directives', ['profileApp.contact', 'profil
 app.directive('skillsSection', function(){
 	return {
 		restrict: 'E',
-		templateUrl: '../../templates/skills-section.html',
+		templateUrl: '/templates/skills-section.html',
 		controller: function($rootScope, $scope, pageContent) {
 			//Initialize object to hold page content
 			$scope.skillsPageContent = {
@@ -36,7 +36,7 @@ app.directive('skillsSection', function(){
 app.directive('experienceSection', function(){
 	return {
 		restrict: 'E',
-		templateUrl: '../../templates/experience-section.html',
+		templateUrl: '/templates/experience-section.html',
 		controller: 'ExperienceController'
 	}
 });
@@ -44,7 +44,7 @@ app.directive('experienceSection', function(){
 app.directive('testimonialsSection', function(){
 	return {
 		restrict: 'E',
-		templateUrl: '../../templates/testimonials-section.html',
+		templateUrl: '/templates/testimonials-section.html',
 		controller: function($rootScope, $scope, pageContent){
 			$scope.activeQuotes = 0;
 
@@ -60,7 +60,7 @@ app.directive('testimonialsSection', function(){
 				$scope.testimonialsPageContent.bodyCopy = response.data.bodyCopy;
 				$scope.testimonialsPageContent.quotes = response.data.quotes;
 			});
-			
+
 			//Show selected quotes page
 			$scope.rotateCarousel = function(nextQuotes) {
 				$scope.activeQuotes = nextQuotes;
@@ -88,7 +88,7 @@ app.directive('aboutSection', function(){
 				$scope.aboutPageContent.paragraphs = response.data.paragraphs;
 				$scope.aboutPageContent.artLinks = response.data.artLinks;
 			});
-			
+
 			//Show full .png image after drawing animation completes
 			$('body').on('webkitAnimationEnd oanimationend msAnimationEnd animationend', '#self-pic-drawing svg', function(e) {
 				$('#self-pic-drawing').addClass('done');
@@ -156,7 +156,7 @@ app.directive('inView', function(){
 				//Grow background size by .05% when scrolling down with element above the fold
 				else if($scope.windowTop < $(window).scrollTop()) {
 					$scope.bgSize = $scope.bgSize + .05;
-					
+
 				}
 
 				//Shrink background size by .05% when scrolling down with element below the fold
@@ -188,15 +188,3 @@ app.directive('inView', function(){
 		}
 	}
 });
-
-
-
-
-
-
-
-
-
-
-
-
