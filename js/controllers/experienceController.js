@@ -5,35 +5,39 @@ var app = angular.module('profileApp.experience', []);
 app.controller('ExperienceController', ['$rootScope', '$scope', '$timeout', function($rootScope, $scope, $timeout){
 
 	$scope.projects = [
-	{
-	      "id":"1",
-	      "company":"FireEye",
-	      "position":"AngularJS Developer",
-	      "logo":"fireeye.png",
-	      "backgroundImg":"iceDS.jpg",
-	      "projectSummary":"Design System and Machine Learning Analytics",
-	      "projectTools":"Angular, React, HTML, SASS, Plotly.js",
-	      "description":"<p>I work in the UX organization of FireEye where I am the engineering lead and a design contributor. I lead a team of engineers and act as project manager for a deign system that we built in both React and Angular frameworks. The design system is a way of offering a library of well thought out UI components and patterns to the company and creating a consistent look across all company products.<\/p><p>My first year at FireEye was spent in the Innovation and Custom Engineering organization building an application for data scientists to measure the efficacy of machine learning models. I was solely responsible for designing and developing the Angular application including workflow, graphic design, and all coding.<\/p>"
+		{
+			"id":"1",
+			"company":"Lowe's",
+			"position":"Senior Front End Engineer",
+			"logo":"lowes.png",
+			"backgroundImg":"lowes.jpg",
+			"projectSummary":"Lowe's eCommerce website",
+			"projectTools":"React, Javascript, HTML, Styled Components, GCP, Micro Front Ends",
+			"description":`<ul><li>Play a vital and influential role on development of new features for the public facing ecommerce web application having a direct impact on company sales</li>
+			<li>Use the latest front end technologies including React, Micro Front Ends, and Typescript</li>
+			<li>Mentor junior engineers on best practices and approaches to front end engineering</li>
+			<li>Work directly with PMs, designers, and back end teams to coordinate and plan features</li>
+			<li>Lead discussions on architecture decisions and overall direction of the front end teams<li></ul>`
+		},
+		{
+			"id":"2",
+			"company":"FireEye",
+			"position":"Senior Front End Engineer",
+			"logo":"fireeye.png",
+			"backgroundImg":"iceDS.jpg",
+			"projectSummary":"Design System and Machine Learning Analytics",
+			"projectTools":"Angular, React, HTML, SASS, Plotly.js",
+			"description":"<p>I work in the UX organization of FireEye where I am the engineering lead and a design contributor. I lead a team of engineers and act as project manager for a deign system that we built in both React and Angular frameworks. The design system is a way of offering a library of well thought out UI components and patterns to the company and creating a consistent look across all company products.<\/p><p>My first year at FireEye was spent in the Innovation and Custom Engineering organization building an application for data scientists to measure the efficacy of machine learning models. I was solely responsible for designing and developing the Angular application including workflow, graphic design, and all coding.<\/p>"
 	   },
 	   {
-	      "id":"2",
-	      "company":"Kalibrate",
-	      "position":"Senior Software Engineer",
-	      "logo":"kalibrate.png",
-	      "backgroundImg":"kalibrate.jpg",
-	      "projectSummary":"Fuel Pricing Software",
-	      "projectTools":"Angular2, Angular CLI, ElasticSearch, D3, HTML, Bootstrap 4, Sass",
-	      "description":"<p>I work on a team of three on a brand new product for wholesale fuel pricing. My responsibilities include architecting the client side of the application as well as designing the UX workflow and the UI design. The application is built with Angular2 using TypeScript and Angular CLI. The styles use Sass as the CSS preprocessor.<\/p>\n\n<p>The main function of the application is to present data to the user in an easily consumed form. For this we are utilizing the D3 javascript library for data visualization.<\/p>"
-	   },
-	   {
-	      "id":"3",
-	      "company":"DecisionDesk",
-	      "position":"Lead Front End Developer",
-	      "logo":"decisiondesk.png",
-	      "backgroundImg":"decisionDesk.jpg",
-	      "projectSummary":"Higher Education Admissions Application",
-	      "projectTools":"BackboneJS, JQuery, Less, Bootstrap, HTML, CSS",
-	      "description":"<p>As Lead Front End developer my role was to build out new features for our Higher Education Application software. I worked with Backbone JS as the main client side technology as well as HTML and Less.<\/p>\n\n<p>In my time with DecisionDesk I helped bring an old product to production quality to deliver to our enterprise clients in time for school enrollment season.<\/p>"
+			"id":"3",
+			"company":"Kalibrate",
+			"position":"Senior Front End Engineer",
+			"logo":"kalibrate.png",
+			"backgroundImg":"kalibrate.jpg",
+			"projectSummary":"Fuel Pricing Software",
+			"projectTools":"Angular2, Angular CLI, ElasticSearch, D3, HTML, Bootstrap 4, Sass",
+			"description":"<p>I work on a team of three on a brand new product for wholesale fuel pricing. My responsibilities include architecting the client side of the application as well as designing the UX workflow and the UI design. The application is built with Angular2 using TypeScript and Angular CLI. The styles use Sass as the CSS preprocessor.<\/p>\n\n<p>The main function of the application is to present data to the user in an easily consumed form. For this we are utilizing the D3 javascript library for data visualization.<\/p>"
 	   }
 	];
 
