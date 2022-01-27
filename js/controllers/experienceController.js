@@ -13,11 +13,13 @@ app.controller('ExperienceController', ['$rootScope', '$scope', '$timeout', func
 			"backgroundImg":"lowes.jpg",
 			"projectSummary":"Lowe's eCommerce website",
 			"projectTools":"React, Javascript, HTML, Styled Components, GCP, Micro Front Ends",
-			"description":`<ul><li>Play a vital and influential role on development of new features for the public facing ecommerce web application having a direct impact on company sales</li>
-			<li>Use the latest front end technologies including React, Micro Front Ends, and Typescript</li>
-			<li>Mentor junior engineers on best practices and approaches to front end engineering</li>
-			<li>Work directly with PMs, designers, and back end teams to coordinate and plan features</li>
-			<li>Lead discussions on architecture decisions and overall direction of the front end teams<li></ul>`
+			"description":`<ul>
+			<li>Play a vital and influential role on development of new features for the public facing ecommerce web application having a direct impact on company sales</li>
+				<li>Use the latest front end technologies including React, Micro Front Ends, and Typescript</li>
+				<li>Mentor junior engineers on best practices and approaches to front end engineering</li>
+				<li>Work directly with PMs, designers, and back end teams to coordinate and plan features</li>
+				<li>Lead discussions on architecture decisions and overall direction of the front end teams</li>
+			</ul>`
 		},
 		{
 			"id":"2",
