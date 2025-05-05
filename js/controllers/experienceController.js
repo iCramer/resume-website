@@ -77,8 +77,8 @@ produced, reduce tech debt, and maximize scalability.</li>
 			//Measure screen to set placeholder to full screen
 			$scope.projectHeight = $('.project:first-child').height();
 			$scope.projectWidth = $('.project:first-child').width();
-			$scope.windowHeight = window.innerHeight * 2;
-			$scope.windowWidth = window.innerWidth * 2 + 15;
+			$scope.windowHeight = window.innerHeight;
+			$scope.windowWidth = window.innerWidth + 15;
 			$scope.leftAlign = $('.grid').offset().left + 15;
 			$scope.topAlign = $(window).scrollTop() - $('.grid').offset().top;
 
